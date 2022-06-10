@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'IniciarSesion',
+        label: 'Iniciar Sesion',
         icon: 'pi pi-fw pi-sign-in',
       },
       {

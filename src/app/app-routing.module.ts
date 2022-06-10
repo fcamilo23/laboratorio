@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { from } from 'rxjs';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CarruselComponent } from './carrusel/carrusel.component';
+const routes: Routes = [{path:'NavBar', component:NavbarComponent },
+                        {path:'Carrusel', component:CarruselComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
       {
         label: 'Iniciar Sesion',
         icon: 'pi pi-fw pi-sign-in',
+        routerLink: '/login',
       },
       {
           label: 'Secciones',

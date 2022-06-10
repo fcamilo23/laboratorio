@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { MenubarModule } from 'primeng/menubar';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarruselComponent } from './carrusel/carrusel.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component'
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CarruselComponent,
+    LoginComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,

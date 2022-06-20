@@ -1,21 +1,19 @@
 import { Noticia } from './../clases/noticia';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoticiasService {
-
-  private noticias:Observable<Noticia>[]=[];
-
   constructor(private http: HttpClient) {}
 
-  /*set(t:string,d:string,im:string,f=new Date(3/5/2022)){
-    const id=this.noticias.length;
-    this.noticias.subscribe(new Noticia(id,t,d,im,f));
-  }*/
+  set(t:string,d:string,im:string,f=new Date(3/5/2022)):Observable<Noticia>{
+    const noti= new Noticia(0,t,d,im,f)
+     return this.http.post<Noticia>("/api/Noticias", noti);
+  }
 
   getAll(){
     return this.http.get<Noticia[]>('https://ria2022.test.softtero.com/api/Noticias/Activas');

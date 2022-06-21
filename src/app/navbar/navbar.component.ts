@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
           label: 'Secciones',
           icon: 'pi pi-fw pi-list',
           items: [
-              {label: 'Noticias', icon: 'pi pi-fw pi-info-circle'},
+              {label: 'Noticias', icon: 'pi pi-fw pi-info-circle', routerLink: '/noticias'}, 
               {label: 'Documentos', icon: 'pi pi-fw pi-file'}
           ]
       }

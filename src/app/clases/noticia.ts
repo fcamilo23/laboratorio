@@ -12,4 +12,5 @@ export class Noticia {
       this.imagen = imagen;
       this.fechaCaducidad = fechaCaducidad;
   }
+
 }

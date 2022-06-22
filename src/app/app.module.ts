@@ -10,6 +10,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { HomeComponent } from './components/home/home.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
+import { UnidadCurricularComponent } from './components/unidad-curricular/unidad-curricular.component';
+import { MateriaComponent } from './components/materia/materia.component';
+import { PreviaComponent } from './components/previa/previa.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
     RegistroComponent,
     HomeComponent,
     NoticiasComponent,
+    UnidadCurricularComponent,
+    MateriaComponent,
+    PreviaComponent,
   ],
   imports: [
     BrowserModule,

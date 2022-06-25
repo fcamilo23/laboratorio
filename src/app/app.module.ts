@@ -4,21 +4,41 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenubarModule } from 'primeng/menubar';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CarruselComponent } from './carrusel/carrusel.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { HomeComponent } from './components/home/home.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {CardModule} from 'primeng/card';
+import {PasswordModule} from 'primeng/password';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import {CarouselModule} from 'primeng/carousel';
+import { AuthInterceptor } from './auth-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CarruselComponent,
+    LoginComponent,
+    RegistroComponent,
+    HomeComponent,
+    NoticiasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MenubarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CardModule,
+    PasswordModule,
+    InputTextModule,
+    ButtonModule,
+    CarouselModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

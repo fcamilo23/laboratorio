@@ -1,0 +1,18 @@
+<br/><br/><br/>
+<div [style]="{'display': 'flex' ,'justify-content': 'center'}"  >
+<p-card header="Inicio Sesion" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
+    <form [formGroup]="loginForm" clrForm class="miForm">
+        <span class="p-float-label" >
+            <input id="float-input" type="text" pInputText formControlName="email"  required >
+            <label for="float-input">Username</label>
+        </span>
+      <br/><br/>
+      <span class="p-float-label" >
+        <input id="float-input" type="password" pInputText formControlName="password"  required >
+        <label for="float-input">Password</label>
+    </span>
+        <br/><br/>
+        <button pButton pRipple type="submit" class="p-button-rounded p-button-info" (click)="login()" label="Iniciar Sesion"></button>
+ </form>
+</p-card>
+</div>

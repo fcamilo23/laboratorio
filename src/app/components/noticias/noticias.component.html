@@ -1,0 +1,31 @@
+<div class="" 
+                *ngFor="let n of lstNoticias; let i = index">
+                    
+                <div class="">
+                    
+
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <td style="width: 20%; border-radius: 7px"> <img src="https://res.cloudinary.com/dgooa3xoj/image/upload/v1655850252/a8oqeptscpin06opv0p3.jpg" alt=""></td>
+                            <td style="vertical-align:text-top;"> 
+                                <p style="margin-bottom: 2%" class="titulo">{{n.titulo}}</p>
+                                <p style="margin-top: 0px" class="texto">{{n.descripcion.substring(0,240)}}...</p>
+                            </td>
+                            
+                            <td style="vertical-align:text-top; width: 20%;">
+                                <input style="border-radius: 5px; background: rgb(54, 1, 4);" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar">
+                                <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="editar" value="Editar">
+                            </td>
+                        </tbody>
+                    </table>
+                   
+                </div>
+                
+                <div class="">
+                    
+                </div>
+</div>
+
+<!-- {{n.imagen}} -->

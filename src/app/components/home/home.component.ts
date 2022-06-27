@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import { Noticia } from 'src/app/clases/noticia';
+import { Login } from 'src/app/clases/login';
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,17 @@ export class HomeComponent implements OnInit {
   
 
 
-  constructor() { }
+  constructor(protected noticiaService:NoticiasService) { }
 
   ngOnInit(): void {
+    //let loginData:Login = localStorage.getItem('loginData');
+    var token = localStorage.getItem('loginData');
     
+
+    let n = new Noticia(0,'facu','asd','asd','');
+    
+
+
 
     
   }

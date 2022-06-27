@@ -1,22 +1,25 @@
-import { AuteticacionService } from './service/auteticacion.service';
+
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpInterceptor, HttpEvent, HttpRequest, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Token } from './clases/token';
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+import { Token } from '../clases/token';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class InterceptorTokenService implements HttpInterceptor {
+
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    //alert('interceptor ');
-
     let x  = localStorage.getItem("loginData");
+    alert('interceptor ');
 
 
     if(x != null){
       let loginData:Token = JSON.parse(x);
 
-      localStorage.setItem('f', JSON.stringify(loginData.token));
+      localStorage.setItem('x', JSON.stringify(loginData.token));
     
 
 

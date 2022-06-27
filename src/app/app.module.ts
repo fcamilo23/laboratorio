@@ -16,6 +16,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {CarouselModule} from 'primeng/carousel';
 import { AuthInterceptor } from './auth-interceptor.service';
+import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-noticia/alta-noticia.component';
+import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { AuthInterceptor } from './auth-interceptor.service';
     RegistroComponent,
     HomeComponent,
     NoticiasComponent,
+    AltaNoticiaComponent,
+    EditarNoticiaComponent,
   ],
   imports: [
     BrowserModule,

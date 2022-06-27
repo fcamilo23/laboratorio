@@ -19,10 +19,12 @@ export class NoticiasService {
   }*/
 
   getAll(){
-    return this.http.get<Noticia[]>(this.apiURL);
+    return this.http.get<Noticia[]>(this.apiURL + '/Paged/0/10');
   }
   create(datos:Noticia){
+
     return this.http.post<Noticia>(this.apiURL, datos);
+
   }
   getActivas(){
     return this.http.get<Noticia[]>(this.apiURL + '/Activas');

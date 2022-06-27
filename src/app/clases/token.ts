@@ -1,4 +1,4 @@
-export class Token {
+/*export class Token {
   private token: String="";
   private expiration:String=""
   constructor(){}
@@ -13,5 +13,17 @@ export class Token {
   }
   getExpiration(){
     return this.expiration;
+  }
+}
+*/
+
+export class Token {
+    
+  public token: string;
+  public expiration: string;
+
+  constructor(token: string, expiration: string) {
+      this.token = token;
+      this.expiration = expiration;
   }
 }

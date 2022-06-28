@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
     var token = localStorage.getItem('loginData');
     
 
-    let n = new Noticia(0,'facu','asd','asd','');
     
 
 

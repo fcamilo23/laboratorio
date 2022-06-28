@@ -1,1 +1,63 @@
-<p>alta-noticia works!</p>
+    <form [formGroup]="altaNoticiaForm" clrForm class="miForm">
+
+<div class="center" style="margin-top: 5%">
+    <h1 class="center" style="color: rgb(28, 32, 39);">Nueva Noticia</h1>
+
+    <br/><br/>
+
+ <span class="p-float-label inpresp1" >
+        <input id="float-input" type="text" style="width: 80%" pInputText formControlName="titulo"  required >
+        <label for="float-input">Titulo</label>
+    </span>
+  <br/><br/>
+  <span class="p-float-label inpresp1" >
+    <input id="float-input" type="text" style="width: 80%" pInputText formControlName="descripcion"  required >
+    <label for="float-input">Descripcion</label>
+</span>
+<br/><br/>
+
+<span class="p-float-label inpresp1" >
+    <input id="float-input" type="text" style="width: 80%" name="imagen" id="imagen"  pInputText formControlName="imagen"  required >
+    <label for="float-input">Imagen</label>
+    
+
+</span>
+<br>
+<span class=" inpresp1" >
+    <label for="float-input" style="color: rgb(214, 213, 213)">Fecha de Caducidad</label><br>
+
+    <input id="float-input" type="date" style="width: 80%" name="fecha" id="fecha"  pInputText formControlName="fecha" min="fechaActual" required >
+    
+
+</span>
+
+
+
+    <br/><br/>
+    <input type="submit" class="btn btnResp" style="width: 150px; border-radius:15px" value="Confirmar" (click)="addNoticia()"/>
+</div>
+</form>
+
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script type="text/javascript">
+    const btn = document.getElementById("btn");
+	const imagen = document.getElementById("imagen");
+
+	let urlImagen = ''
+	const widget_cloudinary = cloudinary.createUploadWidget({
+		cloudName: "dgooa3xoj",
+		uploadPreset: "jgpjerdd"
+	}, (error, result) => {
+		if (!error && result && result.event === 'success') {
+			console.log(result.info.secure_url)
+			imagen.value = result.info.secure_url;
+
+		}
+	})
+
+	btn.addEventListener("click", e => {
+            e.preventDefault();
+            widget_cloudinary.open()
+        }, false)
+</script>

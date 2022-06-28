@@ -27,8 +27,8 @@ export class NoticiasComponent implements OnInit {
 
   }
   agregar(){
-   let n = new Noticia(0,'facu','facu','facu','2022-12-12')
-   this.notiServ.create(n).subscribe();
+   //let n = new Noticia(0,'facu','facu','facu','2022-12-12')
+   //this.notiServ.create(n).subscribe();
 
   }
 

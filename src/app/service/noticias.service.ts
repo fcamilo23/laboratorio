@@ -11,6 +11,7 @@ export class NoticiasService {
   private apiURL: string = environment.apiURL + '/Noticias';
   private noticias:Observable<Noticia>[]=[];
 
+
   constructor(private http: HttpClient) {}
 
   /*set(t:string,d:string,im:string,f=new Date(3/5/2022)){
@@ -39,6 +40,7 @@ export class NoticiasService {
   }
   delete(id:number){
     return this.http.delete<Noticia>(this.apiURL + '/' + id);
+
   }
 
  /* get(id:number):Observable<Noticia>{

@@ -43,6 +43,31 @@
 
 }
 
+.inputimg::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.inputimg::before {
+  size: 120px;
+  content: 'Select some files';
+  display: inline-block;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.inputimg:hover::before {
+  border-color: black;
+}
+.inputimg:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+
 .btnEliminar{
   height: 40px; 
   color: white; 

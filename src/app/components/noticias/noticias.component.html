@@ -1,3 +1,4 @@
+
 <div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
     <a href="altaNoticia"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Noticia"></a>
 </div>
@@ -29,7 +30,7 @@
 
                                 <input style="display:none" type="text" value={{n.id}} name="id">
 
-                                <input style="border-radius: 5px; background: rgb(54, 1, 4);" class="btnEliminar btnResp" type="submit" id={{n.id}} name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                <input style="border-radius: 5px" class="btnEliminar btnResp" type="submit" id={{n.id}} name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
                                 <a href="editarNoticia"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="abrirEditar(i)"></a>
                                 
                             </td>

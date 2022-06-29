@@ -64,6 +64,8 @@ export class EditarNoticiaComponent implements OnInit {
     if(localStorage.getItem('logueado') == '1'){
       if(confirm("Desea guardar los cambios realizados?")){
         this.notiServ.edit(this.noticia).subscribe();
+        alert("Se han guardado los cambios exitosamnete!");
+        window.location.href = ('/noticias');
       }
     }else{
       alert('Debe estar logueado para realizar esta accion');

@@ -1,8 +1,8 @@
-<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [circular]="true">
+<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [autoplayInterval]="6000" [circular]="true">
     <ng-template let-carousel pTemplate="item">
         
         <div>
-            <img src="{{carousel.imagen}}" class="center" style="margin-top: 100px;" alt="">
+            <img src="{{carousel.imagen}}" class="center" style="margin-top: 100px;border-radius: 10px;" alt="">
             <img src="{{carousel.text}}" class="center" style="margin-top: 100px;" alt="">
         </div>
     </ng-template>

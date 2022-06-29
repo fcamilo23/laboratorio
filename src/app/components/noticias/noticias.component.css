@@ -43,8 +43,8 @@ td{
 
 @media (max-width: 1350px){
     img{
-        width: 100%;
-        height: 100%;
+        width: 130%;
+        height: 130%;
         margin-top: 5%;
         margin-bottom: 5%;
         margin-left: 20%;
@@ -55,11 +55,12 @@ td{
     .titulo{
         color: white;
         font-size: 100%;
-        float: left;
+        
     }
     .texto{
         color: white;
         font-size: 80%;
+        margin-bottom: 25px;
     }
 
     .btnResp{

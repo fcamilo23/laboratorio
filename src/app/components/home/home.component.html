@@ -1,9 +1,9 @@
-<p-carousel [value]="carousel" [numVisible]="1" [numScroll]="1" [autoplayInterval]="6000" [circular]="true">
-    <ng-template let-carousel pTemplate="item">
+<p-carousel [value]="lstNoticias" [numVisible]="1" [numScroll]="1" [autoplayInterval]="6000" [circular]="true">
+    <ng-template let-notis pTemplate="item">
         
-        <div>
-            <a href="/noticias"><img src="{{carousel.imagen}}" class="center" style="margin-top: 100px;border-radius: 10px;" alt=""></a>
-            <img src="{{carousel.text}}" class="center" style="margin-top: 100px;" alt="">
+        <div style="position: relative; text-align: center;">
+            <a href="/noticias"><img src="{{notis.imagen}}" class="center" style="margin-top: 100px;border-radius: 10px;" alt=""></a>
+            <h1 class="center" style="margin-top: 30px; color: white" alt="">{{notis.titulo}}</h1>
         </div>
         
     </ng-template>

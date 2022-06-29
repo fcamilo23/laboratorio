@@ -18,6 +18,7 @@ import {CarouselModule} from 'primeng/carousel';
 import { AuthInterceptor } from './auth-interceptor.service';
 import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-noticia/alta-noticia.component';
 import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
+import { CarouselService } from './service/carousel.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,7 @@ import { EditarNoticiaComponent } from './components/noticias/editar-noticia/edi
     ButtonModule,
     CarouselModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [CarouselService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

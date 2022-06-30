@@ -20,6 +20,7 @@ import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-not
 import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
 import { CarouselService } from './service/carousel.service';
 import { MateriasComponent } from './components/materias/materias.component';
+import { AltaMateriaComponent } from './components/materias/alta-materia/alta-materia.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { MateriasComponent } from './components/materias/materias.component';
     AltaNoticiaComponent,
     EditarNoticiaComponent,
     MateriasComponent,
+    AltaMateriaComponent,
   ],
   imports: [
     BrowserModule,

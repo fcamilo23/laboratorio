@@ -9,6 +9,7 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-noticia/alta-noticia.component';
 import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
 import { MateriasComponent } from './components/materias/materias.component';
+import { AltaMateriaComponent } from './components/materias/alta-materia/alta-materia.component';
 
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'login', component:LoginComponent},
@@ -18,6 +19,8 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'altaNoticia', component:AltaNoticiaComponent},
                         {path:'editarNoticia', component:EditarNoticiaComponent},
                         {path:'materias', component:MateriasComponent},
+                        {path:'altaMateria', component:AltaMateriaComponent},
+
 
 
                         

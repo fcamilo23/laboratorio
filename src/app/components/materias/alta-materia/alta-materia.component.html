@@ -1,0 +1,47 @@
+<form [formGroup]="altaMateriaForm" clrForm class="miForm">
+
+    <div class="center" style="margin-top: 5%">
+        <h1 class="center" style="color: rgb(28, 32, 39);">Nueva Materia</h1>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+                <input id="float-input" type="text" style="width: 80%" pInputText formControlName="nombre"  required >
+                <label for="float-input">Nombre</label>
+            </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <input id="float-input" type="text" style="width: 80%" pInputText formControlName="descripcion"  required >
+            <label for="float-input">Descripcion</label>
+        </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <input id="float-input" type="text" style="width: 80%" name="imagen" id="creditosminimos"  pInputText formControlName="creditosminimos" required >
+            <label for="float-input">Creditos</label>
+        </span>
+        <br/><br/>
+        <input type="submit" class="btn btnResp" style="width: 150px; border-radius:15px" value="Confirmar" (click)="addNoticia()"/>
+    </div>
+    </form>
+    
+    
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        const btn = document.getElementById("btn");
+        const imagen = document.getElementById("imagen");
+    
+        let urlImagen = ''
+        const widget_cloudinary = cloudinary.createUploadWidget({
+            cloudName: "dgooa3xoj",
+            uploadPreset: "jgpjerdd"
+        }, (error, result) => {
+            if (!error && result && result.event === 'success') {
+                console.log(result.info.secure_url)
+                imagen.value = result.info.secure_url;
+    
+            }
+        })
+    
+        btn.addEventListener("click", e => {
+                e.preventDefault();
+                widget_cloudinary.open()
+            }, false)
+    </script>

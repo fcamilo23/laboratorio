@@ -24,13 +24,7 @@ export class EditarNoticiaComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.cargarDatos();
-
-    
-
-
-
-  
+    this.cargarDatos();  
     
    //   this.noticia = this.notiServ.get(parseInt(id)).subscribe();
   }

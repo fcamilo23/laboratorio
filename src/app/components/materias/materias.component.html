@@ -34,7 +34,7 @@
                                 <input style="display:none" type="text" value={{n.id}} name="id">
 
                                 <input style="border-radius: 5px" class="btnEliminar btnResp" type="submit" id={{n.id}} name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
-                                <a href=""><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" ></a>
+                                <a href="editarMateria"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="abrirEditar(i)"></a>
                                 
                             </td>
                              

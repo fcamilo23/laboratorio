@@ -21,6 +21,11 @@ import { EditarNoticiaComponent } from './components/noticias/editar-noticia/edi
 import { CarouselService } from './service/carousel.service';
 import { MateriasComponent } from './components/materias/materias.component';
 import { AltaMateriaComponent } from './components/materias/alta-materia/alta-materia.component';
+import { EditarMateriaComponent } from './components/materias/editar-materia/editar-materia.component';
+import { UnidadCurricularComponent } from './components/unidad-curricular/unidad-curricular.component';
+import { AltaUnidadComponent } from './components/unidad-curricular/alta-unidad/alta-unidad.component';
+import { EditarUnidadComponent } from './components/unidad-curricular/editar-unidad/editar-unidad.component';
+import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/ver-previas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +38,11 @@ import { AltaMateriaComponent } from './components/materias/alta-materia/alta-ma
     EditarNoticiaComponent,
     MateriasComponent,
     AltaMateriaComponent,
+    EditarMateriaComponent,
+    UnidadCurricularComponent,
+    AltaUnidadComponent,
+    EditarUnidadComponent,
+    VerPreviasComponent,
   ],
   imports: [
     BrowserModule,

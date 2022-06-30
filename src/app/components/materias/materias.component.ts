@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Materia } from 'src/app/clases/materia';
 import { UnidadCurricular } from 'src/app/clases/unidadCurricular';
 import { MateriaService } from 'src/app/service/materias.service';
+import { PreviaService } from 'src/app/service/previa.service';
 import { UnidadCurricularService } from 'src/app/service/unidad-curricular.service';
 
 @Component({
@@ -16,8 +17,9 @@ export class MateriasComponent implements OnInit {
   lstMaterias!: Materia[];
   lstUnidades!: UnidadCurricular[];
   logueado!: string;
+  materiaActual!: Materia;
 
-  constructor(protected materiaService: MateriaService, protected unidadService: UnidadCurricularService) { }
+  constructor(protected materiaService: MateriaService, protected unidadService: UnidadCurricularService, protected previaService: PreviaService) { }
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
@@ -27,6 +29,10 @@ export class MateriasComponent implements OnInit {
     this.cargarLista();
   }
 
+  abrirEditar(index:number){
+    this.materiaActual = this.lstMaterias[index];
+    localStorage.setItem('materiaActual', JSON.stringify(this.materiaActual));
+  }
 
    eliminar(id: number){
     if(confirm('Desea eliminar esta materia?')){
@@ -35,11 +41,11 @@ export class MateriasComponent implements OnInit {
           this.lstUnidades = lst2;
           for (let unidad of this.lstUnidades){
             if(unidad.materia.id==this.materia.id){
-              /*if(unidad.previas.length>0){
+               if(unidad.previas.length>0){
                 for (let previa of unidad.previas){
-                  this.previasService.delete(previa.previa).subscribe();
+                  this.previaService. delete(previa.previa).subscribe();
                 }
-              }*/
+              }
               this.unidadService.delete(unidad.id).subscribe();
             }
           }

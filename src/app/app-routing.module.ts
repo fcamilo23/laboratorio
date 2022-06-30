@@ -10,6 +10,11 @@ import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-not
 import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
 import { MateriasComponent } from './components/materias/materias.component';
 import { AltaMateriaComponent } from './components/materias/alta-materia/alta-materia.component';
+import { EditarMateriaComponent } from './components/materias/editar-materia/editar-materia.component';
+import { UnidadCurricularComponent } from './components/unidad-curricular/unidad-curricular.component';
+import { AltaUnidadComponent } from './components/unidad-curricular/alta-unidad/alta-unidad.component';
+import { EditarUnidadComponent } from './components/unidad-curricular/editar-unidad/editar-unidad.component';
+import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/ver-previas.component';
 
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'login', component:LoginComponent},
@@ -20,18 +25,11 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'editarNoticia', component:EditarNoticiaComponent},
                         {path:'materias', component:MateriasComponent},
                         {path:'altaMateria', component:AltaMateriaComponent},
-
-
-
-                        
-                        
-
-
-
-
-
-
-
+                        {path:'editarMateria', component:EditarMateriaComponent},
+                        {path:'unidadCurricular', component:UnidadCurricularComponent},
+                        {path:'editarUnidad', component:EditarUnidadComponent},
+                        {path:'altaUnidad', component:AltaUnidadComponent},
+                        {path:'verPrevias', component:VerPreviasComponent}
                       ];
 
 @NgModule({

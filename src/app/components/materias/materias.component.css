@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+    border: 5px solid rgb(19, 23, 29);
+ }
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid rgb(19, 23, 29);
+ }
+ th {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+ }
+
+ .texto{
+    color: white;
+    font-size: 20px;
+ }
+
+@media (max-width: 1350px){
+    img{
+        width: 130%;
+        height: 130%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 20%;
+    
+        
+    }
+
+    .titulo{
+        color: white;
+        font-size: 100%;
+        
+    }
+    .texto{
+        color: white;
+        font-size: 80%;
+        margin-bottom: 25px;
+    }
+
+    .btnResp{
+        width: 90%;
+        margin-top: 5px;
+    }
+
+    td{
+    }
+
+}

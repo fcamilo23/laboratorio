@@ -36,11 +36,6 @@ export class MateriaService {
     return this.http.post<Materia>(this.apiURL, datos);
 
   }
-
-
-  get(id:number){
-    return this.http.get<Materia>(this.apiURL + '/' + id);
-  }
   edit(datos:Materia){
     return this.http.put<Materia>(this.apiURL + '/' + datos.id, datos);
   }

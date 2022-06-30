@@ -19,6 +19,7 @@ import { AuthInterceptor } from './auth-interceptor.service';
 import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-noticia/alta-noticia.component';
 import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
 import { CarouselService } from './service/carousel.service';
+import { MateriasComponent } from './components/materias/materias.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { CarouselService } from './service/carousel.service';
     NoticiasComponent,
     AltaNoticiaComponent,
     EditarNoticiaComponent,
+    MateriasComponent,
   ],
   imports: [
     BrowserModule,

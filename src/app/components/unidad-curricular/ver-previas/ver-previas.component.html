@@ -1,0 +1,28 @@
+<div class=""
+                *ngFor="let n of letprevias; let i = index">
+                    
+                <div class="">
+
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.unidadCurricular}}</p></td>
+                            <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.previa}</p></td>
+                            <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.tipo}</p></td>
+
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                                <input style="border-radius: 5px" class="btnEliminar btnResp" type="submit" id={{n.previa}} name="eliminar" value="Eliminar" (click)="eliminar(n.previa)">
+                            </td>
+
+                        </tbody>
+                    </table>
+
+                   
+                </div>
+                
+                <div class="">
+                    
+                </div>
+</div>
+

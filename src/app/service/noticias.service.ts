@@ -1,22 +1,46 @@
 import { Noticia } from './../clases/noticia';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoticiasService {
+  private apiURL: string = environment.apiURL + '/Noticias';
+  private noticias:Observable<Noticia>[]=[];
+
+
   constructor(private http: HttpClient) {}
 
-  set(t:string,d:string,im:string,f=new Date(3/5/2022)):Observable<Noticia>{
-    const noti= new Noticia(0,t,d,im,f)
-     return this.http.post<Noticia>("/api/Noticias", noti);
-  }
+  /*set(t:string,d:string,im:string,f=new Date(3/5/2022)){
+    const id=this.noticias.length;
+    this.noticias.subscribe(new Noticia(id,t,d,im,f));
+  }*/
 
   getAll(){
-    return this.http.get<Noticia[]>('https://ria2022.test.softtero.com/api/Noticias/Activas');
+    return this.http.get<Noticia[]>(this.apiURL + '/Paged/0/10');
+  }
+  create(datos:Noticia){
+
+    return this.http.post<Noticia>(this.apiURL, datos);
+
+  }
+  getActivas(){
+    return this.http.get<Noticia[]>(this.apiURL + '/Activas');
+  }
+
+
+  get(id:number){
+    return this.http.get<Noticia>(this.apiURL + '/' + id);
+  }
+  edit(datos:Noticia){
+    return this.http.put<Noticia>(this.apiURL + '/' + datos.id, datos);
+  }
+  delete(id:number){
+    return this.http.delete<Noticia>(this.apiURL + '/' + id);
+
   }
 
  /* get(id:number):Observable<Noticia>{

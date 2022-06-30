@@ -1,14 +1,36 @@
-import { FormNoticiaComponent } from './form-noticia/form-noticia.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { from } from 'rxjs';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CarruselComponent } from './carrusel/carrusel.component';
-import { VerNoticiasComponent } from './ver-noticias/ver-noticias.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { HomeComponent } from './components/home/home.component';
+import { NoticiasComponent } from './components/noticias/noticias.component';
+import { AltaNoticiaComponent } from './components/noticias/altaNoticia/alta-noticia/alta-noticia.component';
+import { EditarNoticiaComponent } from './components/noticias/editar-noticia/editar-noticia.component';
+import { MateriasComponent } from './components/materias/materias.component';
+import { AltaMateriaComponent } from './components/materias/alta-materia/alta-materia.component';
+import { EditarMateriaComponent } from './components/materias/editar-materia/editar-materia.component';
+import { UnidadCurricularComponent } from './components/unidad-curricular/unidad-curricular.component';
+import { AltaUnidadComponent } from './components/unidad-curricular/alta-unidad/alta-unidad.component';
+import { EditarUnidadComponent } from './components/unidad-curricular/editar-unidad/editar-unidad.component';
+import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/ver-previas.component';
+
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
-                        {path:'Carrusel', component:CarruselComponent},
-                        {path:'FormNoticia',component:FormNoticiaComponent},
-                        {path:'VerNoticia', component:VerNoticiasComponent}];
+                        {path:'login', component:LoginComponent},
+                        {path:'registro', component:RegistroComponent},
+                        {path:'home', component:HomeComponent},
+                        {path:'noticias', component:NoticiasComponent},
+                        {path:'altaNoticia', component:AltaNoticiaComponent},
+                        {path:'editarNoticia', component:EditarNoticiaComponent},
+                        {path:'materias', component:MateriasComponent},
+                        {path:'altaMateria', component:AltaMateriaComponent},
+                        {path:'editarMateria', component:EditarMateriaComponent},
+                        {path:'unidadCurricular', component:UnidadCurricularComponent},
+                        {path:'editarUnidad', component:EditarUnidadComponent},
+                        {path:'altaUnidad', component:AltaUnidadComponent},
+                        {path:'verPrevias', component:VerPreviasComponent}
+                      ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,56 @@
+
+<div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
+    <a href="altaMateria"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Materia"></a>
+</div>
+
+
+<div class="" 
+
+                *ngFor="let n of lstMaterias; let i = index">
+                    
+                <div class="">
+
+                    <table>
+                        <thead>
+                            <tr>
+                            <th style="width: 40px">id</th>
+                            <th style="width: 20px">Creditos Minimos</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th></th>
+
+                        </tr>
+
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 20px"><p class="texto">{{n.creditosMinimos}}</p></td>
+                            <td><p class="texto">{{n.nombre}}</p></td>
+                            <td><p class="texto">{{n.descripcion.substring(0,20)}}...</p></td>
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 10%;">
+
+                                <input style="display:none" type="text" value={{n.id}} name="id">
+
+                                <input style="border-radius: 5px" class="btnEliminar btnResp" type="submit" id={{n.id}} name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                <a href="editarMateria"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="abrirEditar(i)"></a>
+                                
+                            </td>
+                             
+                        </tr>
+
+                            
+
+                           
+
+                        </tbody>
+                    </table>
+
+                   
+                </div>
+                
+                <div class="">
+                    
+                </div>
+</div>

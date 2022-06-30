@@ -1,17 +1,15 @@
-import { DatePipe } from "@angular/common";
-
 export class Noticia {
-  id:number= 0;
-  titulo: string="";
-  descripcion: string="";
-  imagen:string="";
-  fechaCaducidad= new Date();
+  public id: number;
+  public titulo: string;
+  public descripcion: string;
+  public imagen: string;
+  public fechaCaducidad: Date;
 
-  constructor(id: number, titulo: string, d:string,i:string,f:Date) {
+  constructor(id: number, titulo: string, descripcion: string, imagen: string, fechaCaducidad: Date) {
       this.id = id;
       this.titulo = titulo;
-      this.descripcion=d;
-      this.imagen=i;
-      this.fechaCaducidad=f;
+      this.descripcion = descripcion;
+      this.imagen = imagen;
+      this.fechaCaducidad = fechaCaducidad;
   }
 }

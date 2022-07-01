@@ -26,6 +26,10 @@ import { UnidadCurricularComponent } from './components/unidad-curricular/unidad
 import { AltaUnidadComponent } from './components/unidad-curricular/alta-unidad/alta-unidad.component';
 import { EditarUnidadComponent } from './components/unidad-curricular/editar-unidad/editar-unidad.component';
 import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/ver-previas.component';
+import { ActivosComponent } from './components/Documentos/activos/activos.component';
+import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
+import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +47,9 @@ import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/
     AltaUnidadComponent,
     EditarUnidadComponent,
     VerPreviasComponent,
+    ActivosComponent,
+    NuevoComponent,
+    ModificarComponent,
   ],
   imports: [
     BrowserModule,

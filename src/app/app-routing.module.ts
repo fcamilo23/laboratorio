@@ -15,6 +15,9 @@ import { UnidadCurricularComponent } from './components/unidad-curricular/unidad
 import { AltaUnidadComponent } from './components/unidad-curricular/alta-unidad/alta-unidad.component';
 import { EditarUnidadComponent } from './components/unidad-curricular/editar-unidad/editar-unidad.component';
 import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/ver-previas.component';
+import { ActivosComponent } from './components/Documentos/activos/activos.component';
+import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
+import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
 
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'login', component:LoginComponent},
@@ -29,7 +32,10 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'unidadCurricular', component:UnidadCurricularComponent},
                         {path:'editarUnidad', component:EditarUnidadComponent},
                         {path:'altaUnidad', component:AltaUnidadComponent},
-                        {path:'verPrevias', component:VerPreviasComponent}
+                        {path:'verPrevias', component:VerPreviasComponent},
+                        {path:'DocumentosActivos', component:ActivosComponent},
+                        {path:'DocumentoModificar', component:ModificarComponent},
+                        {path:'DocumentoNuevo', component:NuevoComponent}
                       ];
 
 @NgModule({

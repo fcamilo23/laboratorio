@@ -1,0 +1,57 @@
+
+    <div class="center" style="margin-top: 5%">
+    
+        <br/><br/>
+ <form [formGroup]="editNoticiaForm" clrForm class="miForm">
+
+    <span class=" inpresp1" >
+        <label for="float-input" style="color: rgb(214, 213, 213)"></label><br>
+        <img [src]="getImagen()" style="margin-left: 18%; width: 40%; height: 40%; margin-bottom: 5%"  id="img" alt="">
+        </span>
+      <br/><br/>
+
+
+     <span class=" inpresp1" >
+        <label for="float-input" style="color: rgb(214, 213, 213)">Titulo</label><br>
+            <input id="float-input" type="text" style="width: 80%" pInputText formControlName="titulo"  required >
+        </span>
+      <br/><br/>
+      <span class="inpresp1" >
+        <label for="float-input" style="color: rgb(214, 213, 213)">Descripcion</label><br>
+
+        <input id="float-input" type="text" style="width: 80%" pInputText formControlName="descripcion"  required >
+    </span>
+    
+    
+    <br><br>
+    
+    <span class=" inpresp1" >
+        <label for="float-input" style="color: rgb(214, 213, 213)">Fecha de Caducidad</label><br>
+    
+        <input id="float-input" type="datetime-local" style="width: 80%" name="fecha" id="fecha"  pInputText formControlName="fecha"  required ><br><br>
+        
+    
+    </span>
+
+    
+<span class=" inpresp1" >
+    <label for="float-input" style="color: rgb(214, 213, 213)" >Imagen</label><br>
+
+    <input class="inputimg" clrInput type="file" (change)="alCargarImagen($event)" accept=".png, .jpg, .jpeg," name="imagen" id="imagen"  pInputFile formControlName="imagen"  required  />
+
+    
+
+</span>
+<br>
+    
+
+    
+        <br/><br/>
+        <input type="submit" class="btn btnResp" style="width: 150px; border-radius:15px; color:white" value="Guardar Cambios" (click)="editar()" />
+ </form>
+    </div>
+
+
+    <script>
+        
+    </script>

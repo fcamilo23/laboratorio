@@ -1,17 +1,20 @@
-<div class="diva" style="min-width: 50%;">
-    <div class="grid p-fluid" style="text-align: center" ></div>
-    <img src="https://res.cloudinary.com/dgooa3xoj/image/upload/v1654909337/ylvr2v36uxgja8vcljdm.png"  class="mr-2 center resp">
-    <div class="col-12 md:col-4">
-        <div class="p-inputgroup">
-            <input style="height: 35px; margin-top: 40px;" type="text" class="center inpresp" pInputText placeholder="Ingrese su usuario" >         
-        </div>
-        <div class="p-inputgroup">
-            <input style="height: 35px; margin-top: 40px;" class="center inpresp" type="text"  pInputText placeholder="Ingrese su contraseña" >         
-        </div>
+<br/><br/><br/>
+<div [style]="{'display': 'flex' ,'justify-content': 'center'}"  >
+<p-card header=" "  [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center','background': 'rgb(51, 62, 77)'}">
+    <img src="https://res.cloudinary.com/dgooa3xoj/image/upload/v1654909337/ylvr2v36uxgja8vcljdm.png" class="center" style="margin-bottom: 40px; width: 200px; height: 120px" alt="">    
+    <form [formGroup]="loginForm" clrForm class="miForm">
 
-        <input type="submit" class="center btn" style="border-radius: 15px; width: 200px" value=" Iniciar Sesión "/>
-        
-
-    </div>         
-
+        <span class="p-float-label" >
+            <input id="float-input" type="text" pInputText formControlName="email"  required >
+            <label for="float-input">Username</label>
+        </span>
+      <br/><br/>
+      <span class="p-float-label" >
+        <input id="float-input" type="password" pInputText formControlName="password"  required >
+        <label for="float-input">Password</label>
+    </span>
+        <br/><br/>
+        <button pButton pRipple type="submit" class="p-button-rounded p-button-info" (click)="login()" label="Iniciar Sesion"></button>
+ </form>
+</p-card>
 </div>

@@ -2,13 +2,14 @@ import { Documento } from './../clases/documento';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentService {
   private apiURL: string = environment.apiURL + '/Documentos';
-  public docuselect!:Documento;
+  public docuselect!:Observable<Documento>;
   //['INFORMACION_CARRERA', 'OPORTUNIDADES_LABORALES', 'DATOS_DE_INTERES']
   constructor(private http:HttpClient) { }
 

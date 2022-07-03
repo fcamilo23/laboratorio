@@ -50,7 +50,8 @@ export class ActivosComponent implements OnInit {
       );
     }
     Editar(d:Documento){
-      this.docser.docuselect=d;
+      localStorage.setItem('idDocuActual', JSON.stringify(d.id));
+      localStorage.setItem('documentoActual', JSON.stringify(d));
       window.location.href=('/DocumentoModificar')
     }
     showPdf(d:Documento){

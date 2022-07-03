@@ -39,6 +39,7 @@ export class ModificarComponent implements OnInit {
     t=t+this.modificarDocForm.get('titulo')!.value;
     tip=tip+this.modificarDocForm.get('tipo')!.value;
     let d= new Documento(t,tip,doc);
+    d.id=id;
     if (this.docuserv.Modificar(id,d).subscribe()){
       alert('Se ha Modificado la noticia correctamente');
       window.location.href = ('/DocumentosActivos');
@@ -48,6 +49,12 @@ export class ModificarComponent implements OnInit {
     }else{
       alert('Debe estar logueado para realizar esta accion');
     }
+ }
+ Baja(){
+  if(localStorage.getItem('logueado') == '1'){
+    let id= JSON.parse(localStorage.getItem("idDocuActual") || '{}');
+    let d = new Documento(this.docu.titulo,this.docu.tipo,this.docu.documentoPDF);
+  }  
  }
 
 }

@@ -9,6 +9,9 @@ import { NoticiasService } from 'src/app/service/noticias.service';
   styleUrls: ['./alta-noticia.component.css']
 })
 export class AltaNoticiaComponent implements OnInit {
+  fechaActual!: string;
+  
+
   
 
   public altaNoticiaForm: FormGroup = new FormGroup({
@@ -24,7 +27,20 @@ export class AltaNoticiaComponent implements OnInit {
 
   constructor(protected notiServ:NoticiasService) { }
   ngOnInit(): void {
+    this.getFechaActual();
 
+  }
+
+  getFechaActual(){
+
+    var today = new Date();
+    var fech: string;
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    fech = yyyy + '-' + mm + '-' + dd;
+    this.fechaActual = fech;
   }
 
   addNoticia(){

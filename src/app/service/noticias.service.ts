@@ -1,4 +1,6 @@
 import { Noticia } from './../clases/noticia';
+import { NoticiasPaginadas } from './../clases/noticiasPaginadas';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -20,7 +22,8 @@ export class NoticiasService {
   }*/
 
   getAll(){
-    return this.http.get<Noticia[]>(this.apiURL + '/Paged/0/10');
+    return this.http.get<NoticiasPaginadas>(this.apiURL + '/Paged/0/10');
+    
   }
   create(datos:Noticia){
 

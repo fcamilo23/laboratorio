@@ -1,26 +1,45 @@
-table {
+img{
+    width: 70%;
+    height: 70%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 20%;
+
+    
+}
+
+
+table{
     width: 100%;
-    border-top: 5px solid rgb(25, 43, 65);
+}
+
+td{
+ border-top: 5px solid rgb(51, 62, 77);
+}
 
 
- }
- td {
-    width: 25%;
-    text-align: left;
-    vertical-align: top;
-    
- }
- th {
-    
-    width: 25%;
-    text-align: left;
-    vertical-align: top;
- }
-
- .texto{
+.titulo{
+    margin-left: 20%;
     color: white;
-    font-size: 20px;
- }
+    font-size: 300%;
+}
+
+.texto{
+    margin-left: 20%;
+
+    color: white;
+    font-size: 150%;
+}
+
+.left{
+    float: left;
+    width: 45%;
+}
+
+.right{
+    float: right;
+    width:45%;
+}
 
 @media (max-width: 1350px){
     img{

@@ -1,14 +1,13 @@
 
 <div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
     <a href="altaNoticia"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Noticia"></a>
-    <a href="historial-noticias"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Ver Todas"></a>
 </div>
 <form [formGroup]="noticiaForm" clrForm class="miForm">
 
 
 <div class="" 
 
-                *ngFor="let n of lstNoticias; let i = index">
+                *ngFor="let n of lstNoticias1.list; let i = index">
                     
                 <div class="">
 

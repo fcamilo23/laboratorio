@@ -10,7 +10,11 @@ background-blend-mode: saturation;
   }
 
   
-
+.loading{
+  width: 150px;
+  height: 150px;
+  
+}
 .diva{
   border-radius: 5px;
   padding: 30px;
@@ -26,6 +30,12 @@ background-blend-mode: saturation;
   margin-right: auto;
   width: 50%;
 }
+.center1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 
 

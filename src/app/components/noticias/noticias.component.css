@@ -8,7 +8,18 @@ img{
     
 }
 
+.loading{
+    width: 150px;
+    height: 150px;
+    
+  }
 
+  .center1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   
 table{
     width: 100%;
 }

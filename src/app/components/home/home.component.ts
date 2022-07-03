@@ -14,11 +14,12 @@ export class HomeComponent implements OnInit {
   carousel!:Carousel[];
   imagen!:any[];
   notis!:string;
+  loader!: boolean;
 
   
 
 
-  constructor(protected noticiaService:NoticiasService, private carouselServices:CarouselService) { }
+  constructor(protected noticiaService:NoticiasService, private carouselServices:CarouselService) {this.loader = true; }
 
   ngOnInit(): void {
     //let loginData:Login = localStorage.getItem('loginData');
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
       (lst)=>{
         this.lstNoticias = lst;
         this.notis=JSON.stringify(lst);
+        this.loader = false; 
         console.log(this.notis);
         
       }

@@ -1,8 +1,14 @@
-
-<div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
-    <a href="altaNoticia"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Noticia"></a>
-    <a href="historial-noticias"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Ver Todas"></a>
+<div style="margin-top: 250px;" *ngIf="loader">
+    <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
 </div>
+
+<div *ngIf="!loader">
+    <div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
+        <a href="altaNoticia"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Noticia"></a>
+        <a href="historial-noticias"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Ver Todas"></a>
+    </div>
+</div>
+
 <form [formGroup]="noticiaForm" clrForm class="miForm">
 
 

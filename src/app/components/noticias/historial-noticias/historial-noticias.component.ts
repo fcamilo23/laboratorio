@@ -16,9 +16,11 @@ export class HistorialNoticiasComponent implements OnInit {
   lstNoticias1!: NoticiasPaginadas;
   logueado!: string;
   size!: number;
+  loader!: boolean;
 
 
-  constructor(protected notiServ:NoticiasService) { }
+
+  constructor(protected notiServ:NoticiasService) { this.loader=true;}
   public noticiaForm: FormGroup = new FormGroup({
     id: new FormControl('', [Validators.required]),
   });
@@ -52,7 +54,7 @@ export class HistorialNoticiasComponent implements OnInit {
   }
 
   abrirEditar(index:number){
-    this.noticiaActual = this.lstNoticias[index];
+    this.noticiaActual = this.lstNoticias1.list[index];
     localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
     window.location.href = ('/editarNoticia');
   }
@@ -69,6 +71,7 @@ export class HistorialNoticiasComponent implements OnInit {
       (lst)=>{
         this.lstNoticias1 = lst;
         this.size = this.lstNoticias1.size / 10;    
+        this.loader=false;
 
       }
     );

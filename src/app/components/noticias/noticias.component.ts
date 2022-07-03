@@ -14,9 +14,11 @@ export class NoticiasComponent implements OnInit {
   noticiaActual!: Noticia;
   lstNoticias!: Noticia[];
   logueado!: string;
+  loader!: boolean;
 
 
-  constructor(protected notiServ:NoticiasService) { }
+
+  constructor(protected notiServ:NoticiasService) { this.loader=true;}
   public noticiaForm: FormGroup = new FormGroup({
     id: new FormControl('', [Validators.required]),
   });
@@ -61,6 +63,7 @@ export class NoticiasComponent implements OnInit {
     this.notiServ.getActivas().subscribe(
       (lst)=>{
         this.lstNoticias = lst;
+        this.loader=false;
       }
       
     );

@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   apiURL: "https://ria2022.test.softtero.com/api",
-  estaLogueado: false
+  estaLogueado: false,
+  offset: 0,
+  limit: 10
+
 };
 
 

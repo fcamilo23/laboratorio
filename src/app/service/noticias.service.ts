@@ -21,8 +21,8 @@ export class NoticiasService {
     this.noticias.subscribe(new Noticia(id,t,d,im,f));
   }*/
 
-  getAll(){
-    return this.http.get<NoticiasPaginadas>(this.apiURL + '/Paged/0/10');
+  getAll(offset:number, limit:number){
+    return this.http.get<NoticiasPaginadas>(this.apiURL + '/Paged/'+offset+'/'+limit);
     
   }
   create(datos:Noticia){

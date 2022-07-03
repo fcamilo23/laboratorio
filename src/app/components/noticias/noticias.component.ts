@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasService } from 'src/app/service/noticias.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-noticias',
@@ -65,4 +66,5 @@ export class NoticiasComponent implements OnInit {
     );
     
   }
+ 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasPaginadas } from 'src/app/clases/noticiasPaginadas';
 import { NoticiasService } from 'src/app/service/noticias.service';
@@ -14,6 +15,7 @@ export class HistorialNoticiasComponent implements OnInit {
   lstNoticias!: Noticia[];
   lstNoticias1!: NoticiasPaginadas;
   logueado!: string;
+  size!: number;
 
 
   constructor(protected notiServ:NoticiasService) { }
@@ -23,11 +25,13 @@ export class HistorialNoticiasComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.cargarLista(0,10);
+
     let x = localStorage.getItem('logueado');
     if(x!=null){
       this.logueado = x;
     }
-    this.cargarLista();
+   
     //this.agregar();
 
   }
@@ -57,13 +61,18 @@ export class HistorialNoticiasComponent implements OnInit {
       alert(id);
    }
 
-  cargarLista(){
-    this.notiServ.getAll().subscribe(
+   setPaginado(offset: number, limit:number){
+      window.location.reload();
+   }
+  cargarLista(offset: number, limit:number){
+    this.notiServ.getAll(offset,limit).subscribe(
       (lst)=>{
         this.lstNoticias1 = lst;
+        this.size = this.lstNoticias1.size / 10;    
+
       }
-      
     );
+   
     
   }
 }

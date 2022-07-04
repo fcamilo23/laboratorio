@@ -3,6 +3,7 @@ import { FormControl, FormControlName, FormGroup, Validators } from '@angular/fo
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-noticias',
@@ -40,12 +41,43 @@ export class NoticiasComponent implements OnInit {
   }
 
   eliminar(id:number){
-    if(confirm("Está seguro que desea eliminar esta noticia?")){
-      this.notiServ.delete(id).subscribe();
-      alert("Se ha eliminado correctamente la noticia");
-      window.location.reload();
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn1 btn-success',
+        cancelButton: 'btn1 btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Estás seguro?',
+      text: "No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.notiServ.delete(id).subscribe();
 
-    }
+        swalWithBootstrapButtons.fire(
+          'Eliminado!',
+          'La noticia ha sido eliminada',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'Todo sigue como estaba!',
+          'error'
+        )
+      }
+    })
+    
 
   }
 

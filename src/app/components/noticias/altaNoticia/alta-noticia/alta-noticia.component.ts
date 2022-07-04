@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasService } from 'src/app/service/noticias.service';
+import  Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-alta-noticia',
@@ -27,6 +28,7 @@ export class AltaNoticiaComponent implements OnInit {
 
   constructor(protected notiServ:NoticiasService) { }
   ngOnInit(): void {
+    
     this.getFechaActual();
 
   }
@@ -43,6 +45,13 @@ export class AltaNoticiaComponent implements OnInit {
     this.fechaActual = fech;
   }
 
+ vaciarCampos(){
+  this.altaNoticiaForm.controls['titulo'].setValue('');
+  this.altaNoticiaForm.controls['descripcion'].setValue('');
+  this.altaNoticiaForm.controls['imagen'].setValue('');
+  this.altaNoticiaForm.controls['fecha'].setValue('');
+ }
+
   addNoticia(){
     if(localStorage.getItem('logueado') == '1'){
     let titulo = this.altaNoticiaForm.controls['titulo'].value;
@@ -53,15 +62,15 @@ export class AltaNoticiaComponent implements OnInit {
 
     let n = new Noticia(0,titulo,descripcion,imagen,fecha)
     if(this.notiServ.create(n).subscribe()){
-      alert('Se ha agregado la noticia correctamente');
-      window.location.href = ('/noticias');
+      this.vaciarCampos();
+      Swal.fire('Perfecto!', 'Se ha agregado la noticia correctamente', 'success');
 
     }else{
-      alert('Ha ocurrido un error');
+      Swal.fire('Error!', '', 'error');
 
     }
   }else{
-    alert('Debe estar logueado para realizar esta accion');
+    Swal.fire('Error!', 'Debe estar logueado para realizar esta accion', 'error');
 
     }
   }

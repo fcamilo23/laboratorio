@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-noticia',
@@ -56,16 +57,51 @@ export class EditarNoticiaComponent implements OnInit {
 
     
     if(localStorage.getItem('logueado') == '1'){
-      if(confirm("Desea guardar los cambios realizados?")){
-        this.notiServ.edit(this.noticia).subscribe();
-        alert("Se han guardado los cambios exitosamnete!");
-        window.location.href = ('/noticias');
-      }
+        const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn1 btn-success',
+            cancelButton: 'btn1 btn-danger'
+          },
+          buttonsStyling: false
+        })
+        
+        swalWithBootstrapButtons.fire({
+          title: 'Estás seguro?',
+          text: "No podrás revertir esto!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Si, eliminar!',
+          cancelButtonText: 'No, cancelar!',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.notiServ.edit(this.noticia).subscribe();
+    
+            swalWithBootstrapButtons.fire(
+              'Perfecto!',
+              'Los cambios han sido guardados',
+              'success'
+            )
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              'Cancelado',
+              'Todo sigue como estaba!',
+              'error'
+            )
+          }
+        })
+        
+  
     }else{
-      alert('Debe estar logueado para realizar esta accion');
+      Swal.fire('Error!', 'Debe estar logueado para realizar esta accion', 'error');
+
     }
   }else{
-    alert('No pueden quedar campos vacios');
+    Swal.fire('Error!', 'No pueden quedar campos vacios', 'error');
+
   }
   }
 

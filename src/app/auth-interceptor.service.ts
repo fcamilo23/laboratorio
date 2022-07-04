@@ -16,7 +16,6 @@ export class AuthInterceptor implements HttpInterceptor {
     if(x != null){
       let loginData:Token = JSON.parse(x);
 
-      localStorage.setItem('f', JSON.stringify(loginData.token));
     
 
 

@@ -23,7 +23,7 @@
                         </thead>
                         <tbody>
 
-                            <td style="width: 20%; border-radius: 7px"> <img src="{{n.imagen}}" alt=""></td>
+                            <td style="width: 20%; border-radius: 7px"><a href="verNoticia" (click)="abrirEditar(i)"> <img src="{{n.imagen}}" alt=""></a></td>
                             <td style="vertical-align:text-top;"> 
                                 <p style="margin-bottom: 2%" class="titulo">{{n.titulo}}</p>
                                 <p style="margin-top: 0px" class="texto">{{n.descripcion.substring(0,120)}}</p>

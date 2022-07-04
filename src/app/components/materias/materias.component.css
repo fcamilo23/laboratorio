@@ -43,9 +43,7 @@
 
 
  }
- tr{
-    
- }
+
  th {
     
     text-align: left;
@@ -53,10 +51,7 @@
  }
 
 
- .texto{
-    color: white;
-    font-size: 20px;
- }
+
 
 @media (max-width: 1350px){
     img{

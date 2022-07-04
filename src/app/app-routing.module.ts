@@ -19,6 +19,7 @@ import { ActivosComponent } from './components/Documentos/activos/activos.compon
 import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
 import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
 import { HistorialNoticiasComponent } from './components/noticias/historial-noticias/historial-noticias.component';
+import { VerNoticiaComponent } from './components/noticias/ver-noticia/ver-noticia.component';
 
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'login', component:LoginComponent},
@@ -37,7 +38,9 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'DocumentosActivos', component:ActivosComponent},
                         {path:'DocumentoModificar', component:ModificarComponent},
                         {path:'DocumentoNuevo', component:NuevoComponent},
-                        {path:'historial-noticias', component:HistorialNoticiasComponent}
+                        {path:'historial-noticias', component:HistorialNoticiasComponent},
+                        {path:'verNoticia', component:VerNoticiaComponent}
+
 
                       ];
 

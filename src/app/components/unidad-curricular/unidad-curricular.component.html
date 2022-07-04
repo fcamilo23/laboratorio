@@ -1,5 +1,5 @@
 <div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
-    <a href="altaUnidad"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Unidad"></a>
+    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Unidad" (click)="agregar()">
 </div>
 <div class="" 
 
@@ -20,10 +20,9 @@
                             <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
                                 <input style="border-radius: 5px; background: rgb(54, 1, 4);" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar">
-                                <a href="verPrevias"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Lista_Previas" (click)="mandarID(i)"></a>
+                                <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Lista_Previas" (click)="mandarID(n.id)">
                             </td>
                         </tbody>
                     </table>

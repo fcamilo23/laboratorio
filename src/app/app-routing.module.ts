@@ -29,7 +29,7 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'unidadCurricular', component:UnidadCurricularComponent},
                         {path:'editarUnidad', component:EditarUnidadComponent},
                         {path:'altaUnidad', component:AltaUnidadComponent},
-                        {path:'verPrevias', component:VerPreviasComponent}
+                        {path:'verPrevias/:id', component:VerPreviasComponent}
                       ];
 
 @NgModule({

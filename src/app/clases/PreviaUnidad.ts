@@ -1,6 +1,7 @@
+import { UnidadCurricularComponent } from "../components/unidad-curricular/unidad-curricular.component";
 import { UnidadCurricular } from "./unidadCurricular";
 
-export class Previa {
+export class PreviaUnidad {
     public unidadCurricular: UnidadCurricular;
     public previa: UnidadCurricular;
     public tipo: string;

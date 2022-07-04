@@ -18,6 +18,9 @@ export class AuteticacionService {
 
   constructor(private http: HttpClient) { }
 
+
+  //Funcion usuario logueado
+
   logged(us:string,pass:string){
     const l = new Login(us,pass);
     return this.http.post<Login>(this.apiURL + '/login', l).pipe(

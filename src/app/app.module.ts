@@ -26,6 +26,7 @@ import { UnidadCurricularComponent } from './components/unidad-curricular/unidad
 import { AltaUnidadComponent } from './components/unidad-curricular/alta-unidad/alta-unidad.component';
 import { EditarUnidadComponent } from './components/unidad-curricular/editar-unidad/editar-unidad.component';
 import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/ver-previas.component';
+import { AltaPreviaComponent } from './alta-previa/alta-previa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/
     AltaUnidadComponent,
     EditarUnidadComponent,
     VerPreviasComponent,
+    AltaPreviaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,54 @@
-<p>alta-unidad works!</p>
+<form [formGroup]="altaUnidadForm" clrForm class="miForm">
+
+    <div class="center" style="margin-top: 5%">
+        <h1 class="center" style="color: rgb(28, 32, 39);">Nueva Materia</h1>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+                <input id="float-input" type="text" style="width: 80%" pInputText formControlName="nombre"  required >
+                <label for="float-input">Nombre</label>
+            </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <input id="float-input" type="text" style="width: 80%" pInputText formControlName="descripcion"  required >
+            <label for="float-input">Descripcion</label>
+        </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <input id="float-input" type="text" style="width: 80%" name="imagen" id="creditos"  pInputText formControlName="creditos" required >
+            <label for="float-input">Creditos</label>
+        </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <input  clrInput type="file" (change)="alCargarDocumento($event)" accept=".pdf" name="documento" id="documento"  pInputFile formControlName="documento"  required  />
+            <label for="float-input">Documento</label>
+        </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <div class="input-field col s12">
+                <select pInputText formControlName="semestre"  required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+                <label>Seleccione Materia</label>
+            </div>
+        </span>
+        <br/><br/>
+        <span class="p-float-label inpresp1" >
+            <div class="input-field col s12">
+                <select pInputText formControlName="materia"  required>
+                  <option value={{dato.id}} *ngFor="let dato of letMaterias">
+                     {{dato.nombre}}
+                 </option>
+                </select>
+                <label>Seleccione Materia</label>
+            </div>
+        </span>
+        <br/><br/>
+        <input type="submit" class="btn btnResp" style="width: 150px; border-radius:15px" value="Confirmar" (click)="addNoticia()"/>
+    </div>
+</form>
+

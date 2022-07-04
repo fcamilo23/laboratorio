@@ -2,10 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { UnidadCurricular } from "src/app/clases/unidadCurricular";
+
 export const environment = {
   production: false,
   apiURL: "https://ria2022.test.softtero.com/api",
-  estaLogueado: false
+  estaLogueado: false,
+  unidadActual: UnidadCurricular
 };
 
 

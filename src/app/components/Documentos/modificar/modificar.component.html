@@ -7,12 +7,16 @@
       <input id="float-input" type="text" pInputText formControlName="titulo" >
       <label for="float-input">Titulo</label>
   </span>
-  <br/><br/>
-    <select style="color: 'white'; background-color:'#20262e'" id="select-menu" formControlName='tipo' class="bx--text-input" required name="actionSelection" >
+  <br/>
+    <select style="color: 'white'; background-color:'#20262e'; height: '40px';" id="select-menu" formControlName='tipo' class="bx--text-input" required name="actionSelection" >
       <option  *ngFor="let t of tipos" style="color: '#20262e'; background-color:'white'" [value]="t">{{t}}</option>
     </select>
   <br/><br/>
-  <button pButton pRipple type="submit" class="p-button-rounded p-button-info" (click)="Modificar()" label="Guardar"></button>
-  </form>
+  <span class="p-buttonset">
+    <button pButton pRipple label="GUARDAR" icon="pi pi-check" (click)="Modificar()"></button>
+    <button pButton pRipple label="BORRAR" icon="pi pi-trash" (click)="Baja()"></button>
+    <button pButton pRipple label="CANCELAR" icon="pi pi-times" (click)="cancelar()"></button>
+</span>
+</form>
 </p-card>
 </div>

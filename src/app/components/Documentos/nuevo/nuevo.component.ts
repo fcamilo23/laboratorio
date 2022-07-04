@@ -50,7 +50,6 @@ export class NuevoComponent implements OnInit {
   // Si realmente se cargo un archivo
   if (archivo) {
     const lector = new FileReader();
-
     lector.onload = this.obtenerStringDocumento.bind(this);
     lector.readAsBinaryString(archivo);
     // OJO que el string con la imagen demora unos milisegundos en cargarse
@@ -62,5 +61,8 @@ export class NuevoComponent implements OnInit {
 obtenerStringDocumento(e:any) {
   let strImg = "data:application/pdf;base64," + btoa(e.target.result);
   this.createDocForm.controls['documento'].setValue(strImg);
+}
+cancelar(){
+  window.location.href = ('/DocumentosActivos');
 }
 }

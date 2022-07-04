@@ -28,8 +28,8 @@
 
 <p-card header="OPURTUNIDAD LABORAL" [style]="{'width': '25rem', 'margin-bottom': '4em','display': 'flex' ,'justify-content': 'center'}">
 <div  *ngFor="let ol of oplab ">
- <h3 style="text-decoration:underline">{{ol.titulo}} </h3>
- <p>
+  <h3 style="text-decoration:underline">{{ol.titulo}}</h3>
+  <p>
   <button *ngIf='logueado' pButton pRipple type="button" label="VER" class="p-button-outlined p-button-rounded" (click)="showPdf(ol)"></button>
    <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" class="p-button-outlined p-button-rounded" (click)="Editar(ol)"></button>
  </p>

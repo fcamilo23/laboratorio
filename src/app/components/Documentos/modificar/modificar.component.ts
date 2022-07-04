@@ -32,7 +32,6 @@ export class ModificarComponent implements OnInit {
  Modificar(){
   if(localStorage.getItem('logueado') == '1'){
     let id= JSON.parse(localStorage.getItem("idDocuActual") || '{}');
-    alert('id='+id);
     let t:string="";
     let tip:string="";
     let doc:string="";
@@ -54,7 +53,20 @@ export class ModificarComponent implements OnInit {
   if(localStorage.getItem('logueado') == '1'){
     let id= JSON.parse(localStorage.getItem("idDocuActual") || '{}');
     let d = new Documento(this.docu.titulo,this.docu.tipo,this.docu.documentoPDF);
-  }  
+    d.id=id;
+    d.activo=false;
+    if (this.docuserv.Modificar(id,d).subscribe()){
+      alert('Se ha Modificado la noticia correctamente');
+      window.location.href = ('/DocumentosActivos');
+    }else{    alert('Ha ocurrido un error');
+  }
+  }else{
+    alert('Debe estar logueado para realizar esta accion');
+  }
+  }
+  cancelar(){
+    window.location.href = ('/DocumentosActivos');
+  }
  }
 
-}
+

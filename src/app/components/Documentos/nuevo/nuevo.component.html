@@ -8,13 +8,16 @@
       <label for="float-input">Titutlo</label>
   </span>
   <br/><br/>
-  <input  clrInput type="file" (change)="alCargarDocumento($event)" accept=".pdf" name="documento" id="documento"  pInputFile formControlName="documento"  required  />
+  <input style="color: 'white'; background-color:'#20262e';height: '20px';" clrInput type="file" (change)="alCargarDocumento($event)" accept=".pdf" name="documento" id="documento"  pInputFile formControlName="documento"  required  />
     <br/><br/>
-    <select style="color: 'white'; background-color:'#20262e'" id="select-menu" formControlName='tipo' class="bx--text-input" required name="actionSelection" >
+    <select style="color: 'white'; background-color:'#20262e';height: '40px';" id="select-menu" formControlName='tipo' class="bx--text-input" required name="actionSelection" >
       <option  *ngFor="let t of tipos" style="color: '#20262e'; background-color:'white'" [value]="t">{{t}}</option>
     </select>
   <br/><br/>
-  <button pButton pRipple type="submit" class="p-button-rounded p-button-info" (click)="subir()" label="Subir Documento"></button>
-  </form>
+  <span class="p-buttonset">
+    <button pButton pRipple label="GUARDAR" icon="pi pi-check" (click)="subir()"></button>
+    <button pButton pRipple label="CANCELAR" icon="pi pi-times" (click)="cancelar()"></button>
+</span>
+</form>
 </p-card>
 </div>

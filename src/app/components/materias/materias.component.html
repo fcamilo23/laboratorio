@@ -6,35 +6,35 @@
 
 <div class="" 
 
-                *ngFor="let n of lstMaterias; let i = index">
+               >
                     
                 <div class="">
 
-                    <table>
+                    <table class="table estiloTable " >
                         <thead>
                             <tr>
-                            <th style="width: 40px"></th>
-                            <th style="width: 20px"></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th class="titulo ">Id</th>
+                            <th class="titulo">Créditos Minimos</th>
+                            <th class="titulo ">Nombre</th>
+                            <th class="titulo">Descripción</th>
+                            <th class="titulo ">Acciones</th>
 
                         </tr>
 
 
                         </thead>
-                        <tbody>
+                        <tbody *ngFor="let n of lstMaterias; let i = index">
                         <tr>
-                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
-                            <td style="width: 20px"><p class="texto">{{n.creditosMinimos}}</p></td>
+                            <td><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 200px"><p class="texto">{{n.creditosMinimos}}</p></td>
                             <td><p class="texto">{{n.nombre}}</p></td>
                             <td><p class="texto">{{n.descripcion.substring(0,20)}}...</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 10%;">
 
                                 <input style="display:none" type="text" value={{n.id}} name="id">
 
-                                <input style="border-radius: 5px" class="btnEliminar btnResp" type="submit" id={{n.id}} name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
-                                <a href="editarMateria"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="abrirEditar(i)"></a>
+                                <input style="border-radius: 5px; width: 70px" class="btnEliminar btnResp" type="submit" id={{n.id}} name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                <a href="editarMateria"><input style="border-radius: 5px; width: 70px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="abrirEditar(i)"></a>
                                 
                             </td>
                              

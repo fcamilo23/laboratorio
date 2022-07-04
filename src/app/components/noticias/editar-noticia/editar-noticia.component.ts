@@ -70,7 +70,7 @@ export class EditarNoticiaComponent implements OnInit {
           text: "No podrás revertir esto!",
           icon: 'warning',
           showCancelButton: true,
-          confirmButtonText: 'Si, eliminar!',
+          confirmButtonText: 'Si, guardar cambios!',
           cancelButtonText: 'No, cancelar!',
           reverseButtons: true
         }).then((result) => {

@@ -25,4 +25,8 @@ export class DocumentService {
   Modificar(i:number, d:Documento){
       return this.http.put(this.apiURL+"/"+i,d);
   }
+
+  Historial(offset:number,limit:number){
+    return this.http.get<Documento[]>(this.apiURL+'/Paged/'+offset+'/'+limit);
+  }
 }

@@ -29,6 +29,7 @@ import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/
 import { ActivosComponent } from './components/Documentos/activos/activos.component';
 import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
 import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
+import { HistorialComponent } from './components/Documentos/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ModificarComponent } from './components/Documentos/modificar/modificar.
     ActivosComponent,
     NuevoComponent,
     ModificarComponent,
+    HistorialComponent,
   ],
   imports: [
     BrowserModule,

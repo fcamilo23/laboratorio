@@ -30,6 +30,7 @@ import { ActivosComponent } from './components/Documentos/activos/activos.compon
 import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
 import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
 import { HistorialComponent } from './components/Documentos/historial/historial.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { HistorialComponent } from './components/Documentos/historial/historial.
     ActivosComponent,
     NuevoComponent,
     ModificarComponent,
-    HistorialComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +65,8 @@ import { HistorialComponent } from './components/Documentos/historial/historial.
     PasswordModule,
     InputTextModule,
     ButtonModule,
-    CarouselModule
+    CarouselModule,
+    NgxPaginationModule
   ],
   providers: [CarouselService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],

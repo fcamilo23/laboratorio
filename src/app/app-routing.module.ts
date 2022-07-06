@@ -20,7 +20,6 @@ import { ModificarComponent } from './components/Documentos/modificar/modificar.
 import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
 import { HistorialComponent } from './components/Documentos/historial/historial.component';
 
-
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'login', component:LoginComponent},
                         {path:'registro', component:RegistroComponent},
@@ -38,7 +37,7 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'DocumentosActivos', component:ActivosComponent},
                         {path:'DocumentoModificar', component:ModificarComponent},
                         {path:'DocumentoNuevo', component:NuevoComponent},
-                        {path:'DocumentoHistorial',component:HistorialComponent}
+                        {path:'DocumentoHistorial', component:HistorialComponent}
                       ];
 
 @NgModule({

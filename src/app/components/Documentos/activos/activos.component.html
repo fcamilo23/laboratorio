@@ -1,6 +1,6 @@
 <br/><br/>
 <button *ngIf='logueado' pButton pRipple label="AGREGAR DOCUMENTO" routerLink='/DocumentoNuevo'></button>
-<button pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
+<button *ngIf='logueado' pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
 <br/><br/>
 <div style="display: 'flex' ; justify-content: 'center';">
 <p-card header="DATOS DE INTERES" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">

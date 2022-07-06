@@ -26,7 +26,7 @@ export class DocumentService {
       return this.http.put(this.apiURL+"/"+i,d);
   }
 
-  Historial(offset:number,limit:number){
-    return this.http.get<Documento[]>(this.apiURL+'/Paged/'+offset+'/'+limit);
+  Historial(offset:number){
+    return this.http.get<{list:Documento[],size:number}>(this.apiURL+'/Paged/'+offset+'/2');
   }
 }

@@ -39,20 +39,21 @@ export class HistorialComponent implements OnInit {
       })
   }
   posterior(){
+    let tamano;
     this.docser.Historial(this.page).subscribe(
       (lst)=>{
         this.historia= lst.list;
+        tamano=lst.size;
       })
-      if (this.historia==null){
+      this.page=this.page+1;
+      if (tamano==0){
+        this.page=this.page-1;
         this.docser.Historial(this.page-1).subscribe(
           (lst)=>{
             this.historia= lst.list;
           })
-      }else{
-        this.page=this.page+1;
       }
-
-  }
+      }
   Editar(d:Documento){
     localStorage.setItem('idDocuActual', JSON.stringify(d.id));
     localStorage.setItem('documentoActual', JSON.stringify(d));

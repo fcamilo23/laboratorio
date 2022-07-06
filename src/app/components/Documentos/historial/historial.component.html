@@ -1,0 +1,19 @@
+<div [style]="{'display': 'flex' ,'justify-content': 'center'}">
+<p-card header="HISTORIAL" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
+    <div *ngFor="let d of historia">
+     <h3 style="text-decoration:underline"> TITULO: {{d.titulo}}  </h3>
+     <h4>TIPO: {{d.tipo}}</h4>
+     <p *ngIf='d.activo'>ESTADO: Activo</p>
+     <p *ngIf!='!d.activo'>ESTADO: Bloquedao</p>
+     <p>
+      <button *ngIf='logueado' pButton pRipple type="button"  label="VER" (click)="showPdf(d)"></button>
+      <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" (click)="Editar(d)"></button>
+     </p>
+    </div>
+    <div [style]="{'display': 'flex' ,'justify-content': 'center'}">
+      <button  pButton pRipple type="button" label="<<"  (click)="anterior()" class="p-button-raised p-button-text"></button>
+      <label [style]="{'width': '20px' ,'display': 'flex' ,'justify-content': 'center'}">{{page}}</label>
+      <button pButton pRipple type="button" label=">>"  (click)="posterior()" class="p-button-raised p-button-text"></button>
+    </div>
+  </p-card>
+  </div>

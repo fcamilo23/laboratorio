@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  apiURL: " https://gr3-ria2022.test.softtero.com/api",
-  estaLogueado: false
+  apiURL: "https://gr3-ria2022.test.softtero.com/api",
+  estaLogueado: false,
+  offset: 0,
+  limit: 10
+
 };
 
 

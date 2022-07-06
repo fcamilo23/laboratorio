@@ -1,0 +1,32 @@
+
+    <div class="center" style="margin-top: 5%">
+    
+        <br/><br/>
+ <form [formGroup]="editNoticiaForm" clrForm class="miForm">
+    <span class=" inpresp1 center " >
+        <h1 class="center" style="color: rgb(214, 213, 213); font-size: 70px">{{noticia.titulo}}</h1><br>
+        </span>
+
+    <span class=" inpresp1 " >
+        <label for="float-input" style="color: rgb(214, 213, 213)"></label><br>
+        <img [src]="getImagen()" class="center" style="width: 100%; height: 100%; margin-bottom: 5%"  id="img" alt="">
+        
+      <br/><br/>
+
+
+        <h1 style="color: rgb(214, 213, 213)">{{noticia.descripcion}}</h1><br>
+    </span>
+
+    
+    <h4 style="float: right;">Fecha de Vencimiento: {{noticia.fechaCaducidad}}</h4>
+    
+    
+        
+    
+
+    
+
+    
+
+    
+ </form>

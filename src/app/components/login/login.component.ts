@@ -6,6 +6,7 @@ import { Login } from 'src/app/clases/login';
 import { AuteticacionService } from 'src/app/service/auteticacion.service';
 import { environment } from 'src/environments/environment';
 import { CoreEnvironment } from '@angular/compiler/src/compiler_facade_interface';
+import Swal from 'sweetalert2';
 
 
 
@@ -33,9 +34,17 @@ export class LoginComponent implements OnInit {
       let datosLogin = new Login(correo, contrasenia);
       this.autserv.logged(correo,contrasenia).subscribe(
         (retorno)=>{
+          
           //hacer algo si login es correcto
           //this.router.navigate(['/home']);
+          Swal.fire({
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 3600
+          });
           window.location.href = ('/home');
+
 
         },
         (error)=>{

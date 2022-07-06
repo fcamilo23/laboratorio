@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
-import { Noticia } from 'src/app/clases/noticia';
-import { NoticiasService } from 'src/app/service/noticias.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { Noticia } from 'src/app/clases/noticia';
+import { NoticiasPaginadas } from 'src/app/clases/noticiasPaginadas';
+import { NoticiasService } from 'src/app/service/noticias.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-noticias',
-  templateUrl: './noticias.component.html',
-  styleUrls: ['./noticias.component.css']
+  selector: 'app-historial-noticias',
+  templateUrl: './historial-noticias.component.html',
+  styleUrls: ['./historial-noticias.component.css']
 })
-export class NoticiasComponent implements OnInit {
-
+export class HistorialNoticiasComponent implements OnInit {
   noticiaActual!: Noticia;
   lstNoticias!: Noticia[];
+  lstNoticias1!: NoticiasPaginadas;
   logueado!: string;
+  size!: number;
   loader!: boolean;
 
 
@@ -26,11 +28,13 @@ export class NoticiasComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.cargarLista(0,10);
+
     let x = localStorage.getItem('logueado');
     if(x!=null){
       this.logueado = x;
     }
-    this.cargarLista();
+   
     //this.agregar();
 
   }
@@ -82,33 +86,28 @@ export class NoticiasComponent implements OnInit {
   }
 
   abrirEditar(index:number){
-    this.noticiaActual = this.lstNoticias[index];
+    this.noticiaActual = this.lstNoticias1.list[index];
     localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
     window.location.href = ('/editarNoticia');
-  }
-  abrirVer(index:number){
-    this.noticiaActual = this.lstNoticias[index];
-    localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
-    window.location.href = ('/verNoticia');
-  }
-  abrirNoticia(index:number){
-    this.noticiaActual = this.lstNoticias[index];
-    localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
   }
 
   getNoticia(id:number){
       alert(id);
    }
 
-  cargarLista(){
-    this.notiServ.getActivas().subscribe(
+   setPaginado(offset: number, limit:number){
+      window.location.reload();
+   }
+  cargarLista(offset: number, limit:number){
+    this.notiServ.getAll(offset,limit).subscribe(
       (lst)=>{
-        this.lstNoticias = lst;
+        this.lstNoticias1 = lst;
+        this.size = this.lstNoticias1.size / 10;    
         this.loader=false;
+
       }
-      
     );
+   
     
   }
- 
 }

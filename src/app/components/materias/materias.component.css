@@ -1,23 +1,57 @@
-table {
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
     width: 100%;
-    border: 5px solid rgb(19, 23, 29);
- }
- th, td {
-    width: 25%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    border-collapse: collapse;
+    border-radius: 10px;
+
+  }
+
+  
+  
+  td {
+    border-top: 5px solid rgb(66, 105, 153);
+    background: rgb(78, 129, 196);
+    padding: 15px;
+    
+    
+
     text-align: left;
     vertical-align: top;
-    border: 1px solid rgb(19, 23, 29);
+    
+    
  }
+
+ .titulo{
+    color: black;
+    font-size: 30px;
+ }
+ thead{
+    background: rgb(78, 129, 196);
+    border-bottom: 10px solid rgb(1, 25, 54);
+
+
+
+ }
+
  th {
-    width: 25%;
+    
     text-align: left;
     vertical-align: top;
  }
 
- .texto{
-    color: white;
-    font-size: 20px;
- }
+
+
 
 @media (max-width: 1350px){
     img{

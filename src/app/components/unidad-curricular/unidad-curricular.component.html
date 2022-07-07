@@ -2,52 +2,51 @@
     <a href="altaUnidad"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Unidad"></a>
 </div>
 <div class="" >
-                <div class="" *ngIf="semestre1.length > 0">
+                
+    <h3 *ngIf="semestre1.length > 0"></h3>      
+    <div class="" *ngIf="semestre1.length > 0">
+        <table class="table estiloTable">
+            <thead> <h1  style="margin-left: 20%;" > Semestre 1</h1>
+                <tr>
+                    <th><p class="titulo">Id</p></th>
+                    <th><p class="titulo">Nombre</p></th>
+                    <th><p class="titulo">Descripción</p></th>
+                    <th><p class="titulo">Créditos</p></th>
+                    <th><p class="titulo">PDF</p></th>
+                    <th><p class="titulo">Semestre</p></th>
+                    <th><p class="titulo">Materia</p></th>
+                    <th><p class="titulo">Cantidad Previas</p></th>
+                    <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                    
+                </tr>
 
-                    <table class="table estiloTable" *ngFor="let n of semestre1; let i = index">
+            </thead>
+            <tbody *ngFor="let n of semestre1; let i = index">
 
-                        <thead >
-                            <h1 style="margin-left: 20%"> Semestre 1</h1>
-                            <tr>
-                                <th><p class="titulo">Id</p></th>
-                                <th><p class="titulo">Nombre</p></th>
-                                <th><p class="titulo">Descripción</p></th>
-                                <th><p class="titulo">Créditos</p></th>
-                                <th><p class="titulo">PDF</p></th>
-                                <th><p class="titulo">Semestre</p></th>
-                                <th><p class="titulo">Materia</p></th>
-                                <th><p class="titulo">Cantidad Previas</p></th>
-                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
-                                
-                            </tr>
+                
+                <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
+                <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
+                <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                    <div >
+                        <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                        <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
+                    </div><br><br><br>
+                    <div  >
+                        <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                        <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
+                    </div>
 
-                        </thead>
-                        <tbody >
-
-                            
-                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
-                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                               <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
-                                </div><br><br><br>
-                                <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
-                                </div>
-
-                               
-                            </td>
-                        </tbody>
-                    </table>
-                </div>
+                   
+                </td>
+            </tbody>
+        </table>
+    </div>      
 
 
 
@@ -284,4 +283,8 @@
                 <div class="">
                     
                 </div>
+</div>
+
+<div style="margin-top: 250px;" *ngIf="loader">
+    <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
 </div>

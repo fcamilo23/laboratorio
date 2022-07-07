@@ -57,11 +57,8 @@ export class AgregarPreviaComponent implements OnInit {
   }
 
   agregarPrevia(){
-     let unidadZ = this.previasForm.controls['unidad'].value;
-      let tipoZ = this.previasForm.controls['tipo'].value;
-
-      this.tipo.push(tipoZ);
-      this.unidad.push(+unidadZ);
+    let unidadZ = this.previasForm.controls['unidad'].value;
+    let tipoZ = this.previasForm.controls['tipo'].value;
 
       for(let z of this.unidades){
         if(z.id==+unidadZ)
@@ -70,10 +67,8 @@ export class AgregarPreviaComponent implements OnInit {
           this.unidades.splice(pos, 1);
         }
       }
-
-      for(var i=0; i<=this.unidad.length; i++){
-        let previa = new PreviaSave(this.letid,+unidadZ[i],this.tipo[i]);
-        this.previasService.create(previa).subscribe();
-      }
+      let previa = new PreviaSave(this.letid,+unidadZ,tipoZ);
+      alert(JSON.stringify(previa));
+      this.previasService.create(previa).subscribe();
   }
 }

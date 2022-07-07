@@ -44,8 +44,7 @@ export class VerPreviasComponent implements OnInit {
   }
 
   eliminar(index: number){
-    alert("llegamos"+index)
     this.previasService.delete(this.letprevias[index].id).subscribe();
-    this.rout.navigate(['/verPrevias', +this.letid]);
+    location.reload();
   }
 }

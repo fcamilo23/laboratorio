@@ -4,7 +4,7 @@
 </div>
 
 
-<div class="" 
+<div class="" style="margin-top: 50px"
 
                >
                     
@@ -17,7 +17,7 @@
                             <th class="titulo">Créditos Minimos</th>
                             <th class="titulo ">Nombre</th>
                             <th class="titulo">Descripción</th>
-                            <th class="titulo ">Acciones</th>
+                            <th class="titulo "  *ngIf="logueado=='1'">Acciones</th>
 
                         </tr>
 
@@ -28,7 +28,7 @@
                             <td><p class="texto">{{n.id}}</p></td>
                             <td style="width: 200px"><p class="texto">{{n.creditosMinimos}}</p></td>
                             <td><p class="texto">{{n.nombre}}</p></td>
-                            <td><p class="texto">{{n.descripcion.substring(0,20)}}...</p></td>
+                            <td><p class="texto">{{n.descripcion}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 10%;">
 
                                 <input style="display:none" type="text" value={{n.id}} name="id">
@@ -54,3 +54,6 @@
                     
                 </div>
 </div>
+<div style="margin-top: 250px;" *ngIf="loader">
+    <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
+  </div>

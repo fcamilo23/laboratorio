@@ -5,7 +5,7 @@
     <ng-template let-notis pTemplate="item">
         
         <div style="position: relative; text-align: center;">
-            <a href="/noticias"><img src="{{notis.imagen}}" class="center" style="margin-top: 100px;border-radius: 10px;" alt=""></a>
+            <a href="/noticias" (click)="abrirVer(notis.id)"> <img src="{{notis.imagen}}" class="center" style="margin-top: 100px;border-radius: 10px;" alt=""></a>
             <h1 class="center" style="margin-top: 30px; color: white" alt="">{{notis.titulo}}</h1>
         </div>
         

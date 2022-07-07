@@ -1,15 +1,28 @@
-<div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 4%">
+<div *ngIf="logueado=='1'" style="margin-top: 1%; width: 40%; float: right; margin-bottom: 1%">
     <a href="altaUnidad"><input style="border-radius: 5px" class="btnEditar btnResp" type="submit" name="add" value="Nueva Unidad"></a>
 </div>
-<div class="" 
+<div class="" >
+                <div class="" *ngIf="semestre1.length > 0">
 
-                *ngFor="let n of lstUnidadesCurriculares; let i = index">
-                    
-                <div class="">
-                    <table>
-                        <thead>
+                    <table class="table estiloTable" *ngFor="let n of semestre1; let i = index">
+
+                        <thead >
+                            <h1 style="margin-left: 20%"> Semestre 1</h1>
+                            <tr>
+                                <th><p class="titulo">Id</p></th>
+                                <th><p class="titulo">Nombre</p></th>
+                                <th><p class="titulo">Descripción</p></th>
+                                <th><p class="titulo">Créditos</p></th>
+                                <th><p class="titulo">PDF</p></th>
+                                <th><p class="titulo">Semestre</p></th>
+                                <th><p class="titulo">Materia</p></th>
+                                <th><p class="titulo">Cantidad Previas</p></th>
+                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                                
+                            </tr>
+
                         </thead>
-                        <tbody>
+                        <tbody >
 
                             
                             <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
@@ -19,13 +32,251 @@
                             <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
-                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                                <input style="border-radius: 5px; background: rgb(54, 1, 4);" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Lista_Previas" (click)="mandarID(i)">
-                                <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar_Previa" (click)="agregarPrevia(i)">
+                               <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                </div><br><br><br>
+                                <div  >
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                </div>
+
+                               
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+
+                
+                <br><br>
+                <h3 *ngIf="semestre2.length > 0"></h3>      
+                <div class="" *ngIf="semestre2.length > 0">
+                    <table class="table estiloTable">
+                        <thead > <h1  style="margin-left: 20%" > Semestre 2</h1>
+                            <tr>
+                                <th><p class="titulo">Id</p></th>
+                                <th><p class="titulo">Nombre</p></th>
+                                <th><p class="titulo">Descripción</p></th>
+                                <th><p class="titulo">Créditos</p></th>
+                                <th><p class="titulo">PDF</p></th>
+                                <th><p class="titulo">Semestre</p></th>
+                                <th><p class="titulo">Materia</p></th>
+                                <th><p class="titulo">Cantidad Previas</p></th>
+                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                                
+                            </tr>
+
+                        </thead>
+                        <tbody *ngFor="let n of semestre2; let i = index">
+
+                            
+                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                               <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                </div><br><br><br>
+                                <div  >
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                </div>
+
+                               
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
+                <h3 *ngIf="semestre3.length > 0"></h3>      
+                <div class="" *ngIf="semestre3.length > 0">
+                    <table class="table estiloTable">
+                        <thead>  <h1  style="margin-left: 20%"> Semestre 3</h1>
+                            <tr>
+                                <th><p class="titulo">Id</p></th>
+                                <th><p class="titulo">Nombre</p></th>
+                                <th><p class="titulo">Descripción</p></th>
+                                <th><p class="titulo">Créditos</p></th>
+                                <th><p class="titulo">PDF</p></th>
+                                <th><p class="titulo">Semestre</p></th>
+                                <th><p class="titulo">Materia</p></th>
+                                <th><p class="titulo">Cantidad Previas</p></th>
+                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                                
+                            </tr>
+
+                        </thead>
+                        <tbody *ngFor="let n of semestre3; let i = index">
+
+                            
+                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                               <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                </div><br><br><br>
+                                <div  >
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                </div>
+
+                               
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
+                <h3 *ngIf="semestre4.length > 0"></h3>      
+                <div class="" *ngIf="semestre4.length > 0">
+                    <table class="table estiloTable">  
+                        <thead> <h1  style="margin-left: 20%" > Semestre 4</h1>
+                            <tr>
+                                <th><p class="titulo">Id</p></th>
+                                <th><p class="titulo">Nombre</p></th>
+                                <th><p class="titulo">Descripción</p></th>
+                                <th><p class="titulo">Créditos</p></th>
+                                <th><p class="titulo">PDF</p></th>
+                                <th><p class="titulo">Semestre</p></th>
+                                <th><p class="titulo">Materia</p></th>
+                                <th><p class="titulo">Cantidad Previas</p></th>
+                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                                
+                            </tr>
+
+                        </thead>
+                        <tbody *ngFor="let n of semestre4; let i = index">
+
+                            
+                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                               <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                </div><br><br><br>
+                                <div  >
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                </div>
+
+                               
+                            </td>
+                        </tbody>
+                    </table> 
+                </div>
+                <br><br>
+                <h3 *ngIf="semestre5.length > 0"></h3>      
+                <div class="" *ngIf="semestre5.length > 0">
+                    <table class="table estiloTable">
+                        <thead>  <h1 style="margin-left: 20%"> Semestre 5</h1>
+                            <tr>
+                                <th><p class="titulo">Id</p></th>
+                                <th><p class="titulo">Nombre</p></th>
+                                <th><p class="titulo">Descripción</p></th>
+                                <th><p class="titulo">Créditos</p></th>
+                                <th><p class="titulo">PDF</p></th>
+                                <th><p class="titulo">Semestre</p></th>
+                                <th><p class="titulo">Materia</p></th>
+                                <th><p class="titulo">Cantidad Previas</p></th>
+                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                                
+                            </tr>
+
+                        </thead>
+                        <tbody *ngFor="let n of semestre5; let i = index">
+
+                            
+                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                               <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                </div><br><br><br>
+                                <div  >
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                </div>
+
+                               
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
+                <h3 *ngIf="semestre6.length > 0"></h3>      
+                <div class="" *ngIf="semestre6.length > 0">
+                    <table class="table estiloTable">
+                        <thead>  <h1 style="margin-left: 20%"> Semestre 6</h1>
+                            <tr>
+                                <th><p class="titulo">Id</p></th>
+                                <th><p class="titulo">Nombre</p></th>
+                                <th><p class="titulo">Descripción</p></th>
+                                <th><p class="titulo">Créditos</p></th>
+                                <th><p class="titulo">PDF</p></th>
+                                <th><p class="titulo">Semestre</p></th>
+                                <th><p class="titulo">Materia</p></th>
+                                <th><p class="titulo">Cantidad Previas</p></th>
+                                <th *ngIf="logueado=='1'"><p class="titulo"></p></th>
+                                
+                            </tr>
+
+                        </thead>
+                        <tbody *ngFor="let n of semestre6; let i = index">
+
+                            
+                            <td style="width: 40px"><p class="texto">{{n.id}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.descripcion}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.creditos}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.nombre+"-PlanAcademico.pdf"}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.semestre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
+                            <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
+                            <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
+                               <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                </div><br><br><br>
+                                <div  >
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                </div>
+
+                               
                             </td>
                         </tbody>
                     </table>
@@ -36,3 +287,6 @@
                 </div>
 </div>
 
+<div style="margin-top: 250px;" *ngIf="loader">
+    <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
+  </div>

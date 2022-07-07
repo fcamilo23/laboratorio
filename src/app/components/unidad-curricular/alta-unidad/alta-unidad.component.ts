@@ -9,6 +9,7 @@ import { MateriaService } from 'src/app/service/materias.service';
 import { UnidadCurricularService } from 'src/app/service/unidad-curricular.service';
 import { PreviaService } from 'src/app/service/previa.service';
 import { PreviaSave } from 'src/app/clases/previaSave';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-alta-unidad',
@@ -87,14 +88,14 @@ export class AltaUnidadComponent implements OnInit {
  
       let n = new UnidadCurricular(0,nombre,descripcion,+creditos,this.strImg,+semestre,this.materiaX,this.previas);
       if(this.uniServ.create(n).subscribe()){
-        alert('Se ha agregado la unidad correctamente');
+        swal.fire('Listo!','Se ha agregado la unidad curricular correctamente','success');
         this.router.navigate(['/unidadCurricular']);
       }else{
         alert('Ha ocurrido un error');
       }
 
   }else{
-    alert('Debe estar logueado para realizar esta accion');
+    swal.fire('Error!','Debe estar logueado para realizar esta accion','error');
 
     }
   }

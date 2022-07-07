@@ -87,9 +87,9 @@ export class NoticiasComponent implements OnInit {
     window.location.href = ('/editarNoticia');
   }
   abrirVer(index:number){
+    window.location.href = ('verNoticia');
     this.noticiaActual = this.lstNoticias[index];
     localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
-    window.location.href = ('/verNoticia');
   }
   abrirNoticia(index:number){
     this.noticiaActual = this.lstNoticias[index];

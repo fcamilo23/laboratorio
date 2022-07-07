@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Materia } from 'src/app/clases/materia';
 import { MateriaService } from 'src/app/service/materias.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-materia',
@@ -18,7 +20,7 @@ export class EditarMateriaComponent implements OnInit {
 
   materia!: Materia;
   
-  constructor(protected materiaService: MateriaService) { }
+  constructor(protected materiaService: MateriaService, protected router:Router) { }
 
   ngOnInit(): void {
     
@@ -33,22 +35,69 @@ export class EditarMateriaComponent implements OnInit {
   }
 
   editar(){
+
+
     if(this.editMateriaForm.controls['nombre'].value != "" && this.editMateriaForm.controls['descripcion'].value != "" && this.editMateriaForm.controls['creditos'].value != ""){
       this.materia.nombre =  this.editMateriaForm.controls['nombre'].value;
       this.materia.descripcion =  this.editMateriaForm.controls['descripcion'].value;
       this.materia.creditosMinimos =  this.editMateriaForm.controls['creditos'].value;
       
       if(localStorage.getItem('logueado') == '1'){
-        if(confirm("Desea guardar los cambios realizados?")){
-          this.materiaService.edit(this.materia).subscribe();
-          alert("Se han guardado los cambios exitosamnete!");
-          window.location.href = ('/noticias');
+
+    const Swal = swal.mixin({
+      customClass: {
+        confirmButton: 'btn1 btn-success',
+        cancelButton: 'btn1 btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swal.fire({
+      title: 'Estás seguro?',
+      text: "No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, guardar cambios!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+       
+    
+        this.materiaService.edit(this.materia).subscribe();
+  
+        swal.fire(
+          'Listo!',
+          'Se han guardado los cambios',
+          'success'
+        )
+        this.router.navigate(['/materias']);
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swal.fire(
+          'Cancelado',
+          'Todo sigue como estaba!',
+          'error'
+        )
       }
-      }else{
-        alert('Debe estar logueado para realizar esta accion');
-      }
+    })
+
+  }else{
+    swal.fire(
+      'Error!',
+      'Debe estar logueado para realizar esta accion',
+      'error'
+    )
+  }
+   
     }else{
-      alert('No pueden quedar campos vacios');
+      swal.fire(
+        'Error!',
+        'No pueden quedar campos vacios',
+        'error'
+      )
     }
   }
 }

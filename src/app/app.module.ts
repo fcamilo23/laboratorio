@@ -32,6 +32,9 @@ import { ModificarComponent } from './components/Documentos/modificar/modificar.
 import { HistorialComponent } from './components/Documentos/historial/historial.component';
 import { HistorialNoticiasComponent } from './components/noticias/historial-noticias/historial-noticias.component';
 import { VerNoticiaComponent } from './components/noticias/ver-noticia/ver-noticia.component';
+import { AgregarPreviaComponent } from './components/unidad-curricular/agregar-previa/agregar-previa.component';
+import { ContactosComponent } from './components/contactos/contactos.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { VerNoticiaComponent } from './components/noticias/ver-noticia/ver-notic
     HistorialComponent,
     HistorialNoticiasComponent,
     VerNoticiaComponent,
+    AgregarPreviaComponent,
+    ContactosComponent
   ],
   imports: [
     BrowserModule,

@@ -21,12 +21,16 @@ export class AgregarPreviaComponent implements OnInit {
   });
 
   logueado!: string;
-  unidades!: UnidadCurricular[];
+  unidades: UnidadCurricular[] = [];
   letprevias!: Previa[];
   p!: Previa;
   letid: number = +this._router.snapshot.paramMap.get('id')!;
   tipo: string[] = [];
   unidad: number[] = [];
+
+  unidadX!: UnidadCurricular;
+  unidades2: UnidadCurricular[] = [];
+  esta: boolean = false;
 
   constructor(protected previasService: PreviaService, protected unidadService:UnidadCurricularService, private _router: ActivatedRoute,private route:Router) { }
 
@@ -42,10 +46,39 @@ export class AgregarPreviaComponent implements OnInit {
   cargarUnidades(){
     this.unidadService.getAll().subscribe(
       (lst1)=>{
-        this.unidades = lst1;
-        for(let n of this.unidades){
+        this.unidades2 = lst1;
+        for(let n of this.unidades2){
           if(n.id==this.letid){
-            this.letprevias = n.previas;
+            if(n.previas.length>0){
+              for(let z of this.unidades2){
+                for(let v of n.previas){
+                  if(z.nombre==v.previa.nombre){
+                    this.esta = true;
+                  }      
+                }
+                if(z.nombre==n.nombre){
+                  this.esta = true;
+                } 
+                if(this.esta==false){
+                  this.unidades.push(z);
+                }
+                else{
+                  this.esta = false;
+                }
+              }
+            }else{
+              for(let z of this.unidades2){
+                if(z.nombre==n.nombre){
+                  this.esta = true;
+                } 
+                if(this.esta==false){
+                  this.unidades.push(z);
+                }
+                else{
+                  this.esta = false;
+                }
+              }
+            }
           }
         }
       }
@@ -57,6 +90,7 @@ export class AgregarPreviaComponent implements OnInit {
   }
 
   agregarPrevia(){
+    alert(1);
     let unidadZ = this.previasForm.controls['unidad'].value;
     let tipoZ = this.previasForm.controls['tipo'].value;
 

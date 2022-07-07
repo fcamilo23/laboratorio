@@ -18,8 +18,10 @@ export class VerPreviasComponent implements OnInit {
   unidad!: UnidadCurricular;
   p!: Previa;
   letid: number = +this._router.snapshot.paramMap.get('id')!;
+  loader!: boolean;
 
-  constructor(protected previasService: PreviaService, protected unidadService:UnidadCurricularService, private _router: ActivatedRoute, private rout: Router) { }
+
+  constructor(protected previasService: PreviaService, protected unidadService:UnidadCurricularService, private _router: ActivatedRoute, private rout: Router) { this.loader = true; }
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
@@ -34,9 +36,11 @@ export class VerPreviasComponent implements OnInit {
     this.unidadService.getAll().subscribe(
       (lst1)=>{
         this.unidades = lst1;
+        console.log(JSON.stringify(lst1[0].previas[0]));
         for(let n of this.unidades){
           if(n.id==this.letid){
             this.letprevias = n.previas;
+            this.loader = false;
           }
         }
       }

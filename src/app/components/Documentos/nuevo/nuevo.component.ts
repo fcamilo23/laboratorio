@@ -37,13 +37,13 @@ export class NuevoComponent implements OnInit {
   doc=doc+this.createDocForm.get('documento')!.value;
   let d= new Documento(t,tip,doc);
   if (this.docuserv.altaDocumento(d).subscribe()){
-    Swal.fire('Listo!', 'Se ha agregado la noticia correctamente', 'success');
+    Swal.fire('Listo!', 'Se ha agregado el documento correctamente', 'success');
     this.router.navigate(['/DocumentosActivos']);
   }else{
     alert('Ha ocurrido un error');
   }
   }else{
-    alert('Debe estar logueado para realizar esta accion');
+    Swal.fire('Error!', 'Debe estar logueado para realizar esta accion', 'error');
   }
  }
  alCargarDocumento(evt: any) {

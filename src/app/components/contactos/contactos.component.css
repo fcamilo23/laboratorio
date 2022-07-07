@@ -1,0 +1,21 @@
+.center2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  a{
+    color:rgb(172, 172, 172);
+  }
+  a:hover{
+    color: white;
+  }
+
+@media (max-width: 1350px){
+    .center2 {
+        display: block;
+        margin-left: 30px;
+      }
+  
+    
+    }

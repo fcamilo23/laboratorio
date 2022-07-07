@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import { environment } from 'src/environments/environment';
@@ -21,7 +22,7 @@ export class EditarNoticiaComponent implements OnInit {
 
   noticia!: Noticia;
   
-  constructor(protected notiServ:NoticiasService) { }
+  constructor(protected notiServ:NoticiasService, protected router:Router) { }
 
   ngOnInit(): void {
     
@@ -82,6 +83,8 @@ export class EditarNoticiaComponent implements OnInit {
               'Los cambios han sido guardados',
               'success'
             )
+            this.router.navigate(['/noticias']);
+
           } else if (
             /* Read more about handling dismissals below */
             result.dismiss === Swal.DismissReason.cancel

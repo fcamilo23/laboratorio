@@ -48,7 +48,8 @@ export class NavbarComponent implements OnInit {
               {label: 'Noticias', icon: 'pi pi-fw pi-info-circle', routerLink: '/noticias'}, 
               {label: 'Documentos', icon: 'pi pi-fw pi-file', routerLink:'/DocumentosActivos'},
               {label: 'Materias', icon: 'pi pi-fw pi-file',routerLink: '/materias'},
-              {label: 'Unidades', icon: 'pi pi-fw pi-file',routerLink: '/unidadCurricular'}
+              {label: 'U. Curriculares', icon: 'pi pi-fw pi-file',routerLink: '/unidadCurricular'},
+              {label: 'Contacto', icon: 'pi pi-user',routerLink: '/contacto'}
 
           ]
       }
@@ -69,7 +70,9 @@ export class NavbarComponent implements OnInit {
           {label: 'Noticias', icon: 'pi pi-fw pi-info-circle', routerLink: '/noticias'}, 
           {label: 'Documentos', icon: 'pi pi-fw pi-file', routerLink:'/DocumentosActivos'},
           {label: 'Materias', icon: 'pi pi-fw pi-file',routerLink: '/materias'},
-          {label: 'Unidades', icon: 'pi pi-fw pi-file',routerLink: '/unidadCurricular'}
+          {label: 'U. Curriculares', icon: 'pi pi-fw pi-file',routerLink: '/unidadCurricular'},
+          {label: 'Contacto', icon: 'pi pi-fw pi-file',routerLink: '/contacto'}
+
 
       ]
   }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Materia } from 'src/app/clases/materia';
 import { MateriaService } from 'src/app/service/materias.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-alta-materia',
@@ -29,13 +30,13 @@ export class AltaMateriaComponent implements OnInit {
     let creditosminimos = this.altaMateriaForm.controls['creditosminimos'].value;
 
 
-    let m = new Materia(0, nombre, descripcion, creditosminimos)
+    let m = new Materia(0, nombre, descripcion, creditosminimos);
     if(this.materiaServ.create(m).subscribe()){
-      alert('Se ha agregado la noticia correctamente');
-      this.rout.navigate(['/materias'])
+      swal.fire('Listo!','Se ha agregado la materia correctamente','success');
+      this.rout.navigate(['/materias']);
 
     }else{
-      alert('Ha ocurrido un error');
+      swal.fire('Error!','','error');
 
     }
 

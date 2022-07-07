@@ -1,0 +1,40 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .center1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .esteform{
+    height: 300px;
+    width: 20%;
+    background: rgb(78, 129, 196);
+    border-radius: 5px; 
+  }
+  
+
+  .estediv{
+    height: 300px;
+    width: 100%;
+    background: rgb(78, 129, 196);
+    border-radius: 5px;
+  }
+
+  @media (max-width: 1350px){
+    .estediv{
+        width: 90%;
+    }
+    .esteform{
+        width: 90%;
+    }
+  
+    .inpresp{
+      width: 70%;
+    }
+    }

@@ -1,15 +1,21 @@
 <div class=""
-                *ngFor="let n of letprevias; let i = index">
+                >
                     
                 <div class="">
 
-                    <table>
+                    <table class="table estiloTable">
                         <thead>
+                            <tr>
+                                <th class="titulo">Unidad Curricular</th>
+                                <th class="titulo">Previa</th>
+                                <th class="titulo">Tipo</th>
+                                <th></th>
+                            </tr>
                         </thead>
-                        <tbody>
+                        <tbody *ngFor="let n of letprevias; let i = index">
                             <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.unidadCurricular.nombre}}</p></td>
                             <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.previa.nombre}}</p></td>
-                            <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.tipo}}</p></td>
+                            <td style="vertical-align:text-top;"> <p style="margin-bottom: 2%" class="texto">{{n.tipoPrevia}}</p></td>
 
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
                                 <input style="border-radius: 5px" class="btnEliminar btnResp" type="submit" id={{n.previa}} name="eliminar" value="Eliminar" (click)="eliminar(i)">
@@ -21,8 +27,9 @@
                    
                 </div>
                 
-                <div class="">
-                    
-                </div>
+               
 </div>
 
+<div style="margin-top: 250px;" *ngIf="loader">
+    <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
+  </div>

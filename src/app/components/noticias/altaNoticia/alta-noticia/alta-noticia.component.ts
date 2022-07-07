@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import  Swal  from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alta-noticia',
@@ -26,7 +27,7 @@ export class AltaNoticiaComponent implements OnInit {
   imagenVistaPrevia:String ="";
 
 
-  constructor(protected notiServ:NoticiasService) { }
+  constructor(protected notiServ:NoticiasService, protected router:Router) { }
   ngOnInit(): void {
     
     this.getFechaActual();
@@ -64,6 +65,7 @@ export class AltaNoticiaComponent implements OnInit {
     if(this.notiServ.create(n).subscribe()){
       this.vaciarCampos();
       Swal.fire('Perfecto!', 'Se ha agregado la noticia correctamente', 'success');
+      this.router.navigate(['/noticias']);
 
     }else{
       Swal.fire('Error!', '', 'error');

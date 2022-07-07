@@ -5,6 +5,7 @@ import { Noticia } from 'src/app/clases/noticia';
 import { NoticiasPaginadas } from 'src/app/clases/noticiasPaginadas';
 import { NoticiasService } from 'src/app/service/noticias.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-historial-noticias',
@@ -21,7 +22,7 @@ export class HistorialNoticiasComponent implements OnInit {
 
 
 
-  constructor(protected notiServ:NoticiasService) { this.loader=true;}
+  constructor(protected notiServ:NoticiasService, protected router:Router) { this.loader=true;}
   public noticiaForm: FormGroup = new FormGroup({
     id: new FormControl('', [Validators.required]),
   });
@@ -88,9 +89,14 @@ export class HistorialNoticiasComponent implements OnInit {
   abrirEditar(index:number){
     this.noticiaActual = this.lstNoticias1.list[index];
     localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
-    window.location.href = ('/editarNoticia');
+    this.router.navigate(['/editarNoticia']);
   }
 
+  abrirVer(index:number){
+    this.noticiaActual = this.lstNoticias1.list[index];
+    localStorage.setItem('noticiaActual', JSON.stringify(this.noticiaActual));
+    window.location.href = ('/verNoticia');
+  }
   getNoticia(id:number){
       alert(id);
    }

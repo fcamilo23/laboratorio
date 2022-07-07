@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Materia } from 'src/app/clases/materia';
 import { MateriaService } from 'src/app/service/materias.service';
 
@@ -8,16 +9,16 @@ import { MateriaService } from 'src/app/service/materias.service';
   templateUrl: './alta-materia.component.html',
   styleUrls: ['./alta-materia.component.css']
 })
+
 export class AltaMateriaComponent implements OnInit {
 
- 
   public altaMateriaForm: FormGroup = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     creditosminimos: new FormControl('', [Validators.required]),
   });
 
-  constructor(protected materiaServ:MateriaService) { }
+  constructor(protected materiaServ:MateriaService, private _router: ActivatedRoute, private rout: Router) { }
   ngOnInit(): void {
 
   }
@@ -31,7 +32,7 @@ export class AltaMateriaComponent implements OnInit {
     let m = new Materia(0, nombre, descripcion, creditosminimos)
     if(this.materiaServ.create(m).subscribe()){
       alert('Se ha agregado la noticia correctamente');
-      window.location.href = ('/noticias');
+      this.rout.navigate(['/materias'])
 
     }else{
       alert('Ha ocurrido un error');

@@ -1,0 +1,30 @@
+<form [formGroup]="previasForm" clrForm style="height: 300px; width: 450px; background: rgb(129, 129, 128); border-radius: 5px; margin-left: 420px;">    
+    <div style="margin-left: 20px; margin-top: 70px;"> <form [formGroup]="previasForm" clrForm style="height: 300px; width: 450px; background: rgb(124, 126, 121); border-radius: 5px;">    
+        <div style="margin-left: 140px;">
+            <br><br><br>
+            <span>
+                <label>Seleccione Unidad</label>
+                <div>
+                    <select style="width: 170px; background: gray;" pInputText formControlName="unidad"  required>
+                    <option value={{dato.id}} *ngFor="let dato of unidades">
+                        {{dato.nombre}}
+                    </option>
+                    </select>
+                </div>
+            </span>
+            <br>
+            <span>
+                <label>Seleccione Tipo</label>
+                <div>
+                    <select style="width: 170px; background: gray;" pInputText formControlName="tipo"  required>
+                    <option value="Examen">Examen</option>
+                    <option value="Curso">Curso</option>
+                    </select>
+                </div>
+            </span>
+         </div>
+        <div style="margin-left: 20px; margin-top: 70px;">
+            <button type="button" style="background: rgb(112, 111, 111); margin-left: 50px; margin-right: 10px; width: 150px; float: left;" (click)="salir()">Cerrar</button>
+            <button type="button" style="background: rgb(112, 111, 111); width: 150px;" (click)="agregarPrevia()">Agregar</button>
+        </div>
+</form>

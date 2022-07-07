@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Previa } from '../clases/previa';
+import { PreviaSave } from '../clases/previaSave';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PreviaService {
 
   constructor(private http: HttpClient) {}
 
-  create(datos:Previa){
+  create(datos:PreviaSave){
     return this.http.post<Previa>(this.apiURL, datos);
   }
   

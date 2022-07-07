@@ -3,6 +3,9 @@
 &nbsp;&nbsp;&nbsp;
 <button *ngIf='logueado' pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
 <br/><br/>
+
+
+
 <div style="display: 'flex' ; justify-content: 'center';">
 <p-card header="DATOS DE INTERES" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
 <div *ngFor="let di of datint">
@@ -16,6 +19,7 @@
 </p-card>
 
 <br/><br/>
+
 
 <p-card header="INFORMACION CARRERA" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
 <div *ngFor="let ic of infocar">
@@ -40,4 +44,8 @@
  </p>
 </div>
 </p-card>
+</div>
+
+<div style="margin-top: 250px;" *ngIf="loader">
+  <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
 </div>

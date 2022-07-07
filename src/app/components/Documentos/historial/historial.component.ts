@@ -13,8 +13,10 @@ export class HistorialComponent implements OnInit {
   page=1;
   largo!:number;
   logueado=false;
+  loader!: boolean;
 
-  constructor(protected docser:DocumentService) { }
+
+  constructor(protected docser:DocumentService)  { this.loader=true;}
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
@@ -28,6 +30,8 @@ export class HistorialComponent implements OnInit {
     this.docser.Historial(0).subscribe(
       (lst)=>{
         this.historia= lst.list;
+        this.loader=false;
+
       })
   }
   anterior(){

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Documento } from 'src/app/clases/documento';
 import { DocumentService } from 'src/app/service/document.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo',
@@ -18,7 +20,7 @@ export class NuevoComponent implements OnInit {
     documento:new FormControl('')
   });
   messageService: any;
-  constructor(protected docuserv:DocumentService) {
+  constructor(protected docuserv:DocumentService, protected router:Router) {
   }
 
   ngOnInit(): void {
@@ -35,8 +37,8 @@ export class NuevoComponent implements OnInit {
   doc=doc+this.createDocForm.get('documento')!.value;
   let d= new Documento(t,tip,doc);
   if (this.docuserv.altaDocumento(d).subscribe()){
-    alert('Se ha agregado la noticia correctamente');
-    window.location.href = ('/DocumentosActivos');
+    Swal.fire('Listo!', 'Se ha agregado la noticia correctamente', 'success');
+    this.router.navigate(['/DocumentosActivos']);
   }else{
     alert('Ha ocurrido un error');
   }

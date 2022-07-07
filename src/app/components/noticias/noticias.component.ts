@@ -41,7 +41,7 @@ export class NoticiasComponent implements OnInit {
   }
 
   eliminar(id:number){
-    const swalWithBootstrapButtons = Swal.mixin({
+    const swal = Swal.mixin({
       customClass: {
         confirmButton: 'btn1 btn-success',
         cancelButton: 'btn1 btn-danger'
@@ -49,7 +49,7 @@ export class NoticiasComponent implements OnInit {
       buttonsStyling: false
     })
     
-    swalWithBootstrapButtons.fire({
+    swal.fire({
       title: 'Estás seguro?',
       text: "No podrás revertir esto!",
       icon: 'warning',
@@ -61,7 +61,7 @@ export class NoticiasComponent implements OnInit {
       if (result.isConfirmed) {
         this.notiServ.delete(id).subscribe();
 
-        swalWithBootstrapButtons.fire(
+        swal.fire(
           'Eliminado!',
           'La noticia ha sido eliminada',
           'success'
@@ -70,7 +70,7 @@ export class NoticiasComponent implements OnInit {
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
       ) {
-        swalWithBootstrapButtons.fire(
+        swal.fire(
           'Cancelado',
           'Todo sigue como estaba!',
           'error'

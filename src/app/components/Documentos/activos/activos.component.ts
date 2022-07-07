@@ -11,7 +11,7 @@ import { Routes } from '@angular/router';
   styleUrls: ['./activos.component.css']
 })
 export class ActivosComponent implements OnInit {
-  logueado: boolean=false;
+  logueado!:string;
   datint!:Documento[];
   infocar!:Documento[];
   oplab!:Documento[];
@@ -26,8 +26,8 @@ export class ActivosComponent implements OnInit {
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
-    if((x!=null)||(x==false)){
-      this.logueado = true;
+    if(x!=null){
+      this.logueado = '1';
     }
     this.cargarLista();
   }
@@ -61,7 +61,7 @@ export class ActivosComponent implements OnInit {
     Editar(d:Documento){
       localStorage.setItem('idDocuActual', JSON.stringify(d.id));
       localStorage.setItem('documentoActual', JSON.stringify(d));
-      
+
       window.location.href=('/DocumentoModificar')
     }
     showPdf(d:Documento){

@@ -1,15 +1,15 @@
-<button *ngIf='logueado' pButton pRipple  routerLink='/DocumentoNuevo'>AGREGAR DOCUMENTO</button>
+<button *ngIf="logueado=='1'" pButton pRipple  routerLink='/DocumentoNuevo'>AGREGAR DOCUMENTO</button>
 &nbsp;&nbsp;&nbsp;
-<button *ngIf='logueado' pButton pRipple  routerLink='/DocumentoHistorial'>HISTORIAL</button>
+<button *ngIf="logueado=='1'" pButton pRipple  routerLink='/DocumentoHistorial'>HISTORIAL</button>
 <br/><br/>
 <p-tabView class="responsive-tab-view">
 <p-tabPanel header="DATOS DE INTERES" class="p-tabview-nav">
 <div *ngFor="let di of datint">
  <h3 style="text-decoration:underline"> {{di.titulo}} </h3>
  <p>
- <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(di)">VER</button>
+ <button *ngIf="logueado=='1'" pButton pRipple type="button" (click)="showPdf(di)">VER</button>
  &nbsp;
- <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(di)">EDITAR</button>
+ <button *ngIf="logueado=='1'" pButton pRipple type="button" (click)="Editar(di)">EDITAR</button>
 </p>
 </div>
 </p-tabPanel>
@@ -17,9 +17,9 @@
 <div *ngFor="let ic of infocar">
  <h3 style="text-decoration:underline">  {{ic.titulo}}  </h3>
  <p>
-  <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(ic)">VER</button>
+  <button *ngIf="logueado=='1'" pButton pRipple type="button" (click)="showPdf(ic)">VER</button>
   &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(ic)">EDITAR</button>
+  <button *ngIf="logueado=='1'" pButton pRipple type="button" (click)="Editar(ic)">EDITAR</button>
  </p>
 </div>
 </p-tabPanel>
@@ -27,9 +27,9 @@
 <div  *ngFor="let ol of oplab ">
   <h3 style="text-decoration:underline">{{ol.titulo}}</h3>
   <p>
-  <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(ol)">VER</button>
+  <button *ngIf="logueado=='1'" pButton pRipple type="button" (click)="showPdf(ol)">VER</button>
   &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(ol)">EDITAR</button>
+  <button *ngIf="logueado=='1'" pButton pRipple type="button" (click)="Editar(ol)">EDITAR</button>
  </p>
 </div>
 </p-tabPanel>

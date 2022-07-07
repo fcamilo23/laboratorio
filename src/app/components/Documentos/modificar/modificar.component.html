@@ -13,9 +13,13 @@
     </select>
   <br/><br/>
   <span class="p-buttonset">
-    <button pButton pRipple label="GUARDAR" icon="pi pi-check" (click)="Modificar()"></button>
-    <button pButton pRipple label="BORRAR" icon="pi pi-trash" (click)="Baja()"></button>
-    <button pButton pRipple label="CANCELAR" icon="pi pi-times" (click)="cancelar()"></button>
+    <button pButton pRipple icon="pi pi-check" label="GUARDAR" (click)="Modificar()"></button>
+    &nbsp;
+    <button *ngIf="docu.activo" pButton pRipple icon="pi pi-trash" label="BORRAR" (click)="Baja()"></button>
+    &nbsp;
+    <button *ngIf="!docu.activo" pButton pRipple icon="pi pi-check" label="DAR ALTA" (click)="Alta()"></button>
+    &nbsp;
+    <button pButton pRipple icon="pi pi-times" label="CANCELAR" (click)="cancelar()" ></button>
 </span>
 </form>
 </p-card>

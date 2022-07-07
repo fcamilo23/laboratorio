@@ -3,6 +3,7 @@ import { Documento } from './../../../clases/documento';
 import { DocumentService } from './../../../service/document.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-activos',
@@ -60,6 +61,7 @@ export class ActivosComponent implements OnInit {
     Editar(d:Documento){
       localStorage.setItem('idDocuActual', JSON.stringify(d.id));
       localStorage.setItem('documentoActual', JSON.stringify(d));
+      
       window.location.href=('/DocumentoModificar')
     }
     showPdf(d:Documento){

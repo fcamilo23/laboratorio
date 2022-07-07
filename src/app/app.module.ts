@@ -34,6 +34,7 @@ import { HistorialNoticiasComponent } from './components/noticias/historial-noti
 import { VerNoticiaComponent } from './components/noticias/ver-noticia/ver-noticia.component';
 import { AgregarPreviaComponent } from './components/unidad-curricular/agregar-previa/agregar-previa.component';
 import { ContactosComponent } from './components/contactos/contactos.component';
+import { TabViewModule } from 'primeng/tabview';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { ContactosComponent } from './components/contactos/contactos.component';
     PasswordModule,
     InputTextModule,
     ButtonModule,
-    CarouselModule
+    CarouselModule,
+    TabViewModule
   ],
   providers: [CarouselService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],

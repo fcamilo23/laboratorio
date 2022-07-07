@@ -1,51 +1,40 @@
-<br/><br/>
-<button *ngIf='logueado' pButton pRipple label="AGREGAR DOCUMENTO" routerLink='/DocumentoNuevo'></button>
+<button *ngIf='logueado' pButton pRipple  routerLink='/DocumentoNuevo'>AGREGAR DOCUMENTO</button>
 &nbsp;&nbsp;&nbsp;
-<button *ngIf='logueado' pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
+<button *ngIf='logueado' pButton pRipple  routerLink='/DocumentoHistorial'>HISTORIAL</button>
 <br/><br/>
-
-
-
-<div style="display: 'flex' ; justify-content: 'center';">
-<p-card header="DATOS DE INTERES" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
-<div style="border-bottom: 5px solid rgb(96, 97, 97); margin-bottom: 25%" *ngFor="let di of datint">
+<p-tabView class="responsive-tab-view">
+<p-tabPanel header="DATOS DE INTERES" class="p-tabview-nav">
+<div *ngFor="let di of datint">
  <h3 style="text-decoration:underline"> {{di.titulo}} </h3>
  <p>
- <button *ngIf='logueado' pButton pRipple type="button"  label="VER" (click)="showPdf(di)"></button>
+ <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(di)">VER</button>
  &nbsp;
- <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" (click)="Editar(di)"></button>
+ <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(di)">EDITAR</button>
 </p>
 </div>
-</p-card>
-
-<br/><br/>
-
-
-<p-card header="INFORMACION CARRERA" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
-<div style="border-bottom: 5px solid rgb(96, 97, 97); margin-bottom: 25%" *ngFor="let ic of infocar">
+</p-tabPanel>
+<p-tabPanel header="INFORMACION CARRERA" class="p-tabview-nav">
+<div *ngFor="let ic of infocar">
  <h3 style="text-decoration:underline">  {{ic.titulo}}  </h3>
  <p>
-  <button *ngIf='logueado' pButton pRipple type="button" label="VER"  (click)="showPdf(ic)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(ic)">VER</button>
   &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ic)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(ic)">EDITAR</button>
  </p>
 </div>
-</p-card>
-
-<br/><br/>
-
-<p-card header="OPURTUNIDAD LABORAL" [style]="{'width': '25rem', 'margin-bottom': '4em','display': 'flex' ,'justify-content': 'center'}">
-<div  style="border-bottom: 5px solid rgb(96, 97, 97); margin-bottom: 25%" *ngFor="let ol of oplab ">
+</p-tabPanel>
+<p-tabPanel header="OPURTUNIDAD LABORAL" class="p-tabview-nav">
+<div  *ngFor="let ol of oplab ">
   <h3 style="text-decoration:underline">{{ol.titulo}}</h3>
   <p>
-  <button *ngIf='logueado' pButton pRipple type="button" label="VER"  (click)="showPdf(ol)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(ol)">VER</button>
   &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ol)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(ol)">EDITAR</button>
  </p>
 </div>
-</p-card>
-</div>
-
+</p-tabPanel>
+</p-tabView>
 <div style="margin-top: 250px;" *ngIf="loader">
   <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
 </div>
+

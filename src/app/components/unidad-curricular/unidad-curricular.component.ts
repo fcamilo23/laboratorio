@@ -5,6 +5,7 @@ import { Previa } from 'src/app/clases/previa';
 import { UnidadCurricular } from 'src/app/clases/unidadCurricular';
 import { PreviaService } from 'src/app/service/previa.service';
 import { UnidadCurricularService } from 'src/app/service/unidad-curricular.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-unidad-curricular',
@@ -28,7 +29,7 @@ export class UnidadCurricularComponent implements OnInit {
   semestre6: UnidadCurricular[] = [];
   
 
-  constructor(protected unidadService:UnidadCurricularService,private route:Router, protected previaServ: PreviaService) { this.loader = true; }
+  constructor(protected unidadService:UnidadCurricularService,private route:Router, protected previaServ: PreviaService, protected router:Router) { this.loader = true; }
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
@@ -39,27 +40,65 @@ export class UnidadCurricularComponent implements OnInit {
   }
 
   eliminar(id: number){
-    if(confirm('Desea eliminar esta materia?')){
-      this.unidadService.getAll().subscribe(
-      (lst2)=>{
-        this.letunidades = lst2;
-        for(let x of this.lstUnidadesCurriculares){
-          if(x.id==id){
-            this.unidadX = x;
-          }
-        }
-        if(this.unidadX.previas.length>0){
-          alert("entra");
-          for (let previa of this.unidadX.previas){
-            alert("entra2");
-            this.previaServ.delete(previa.previa.id).subscribe();
-          }
-          alert("sale");
-        }
-        this.unidadService.delete(id).subscribe();
-        location.reload();
-      })
-    }    
+
+    const Swal = swal.mixin({
+      customClass: {
+        confirmButton: 'btn1 btn-success',
+        cancelButton: 'btn1 btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swal.fire({
+      title: 'Estás seguro?',
+      text: "No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+      
+        this.unidadService.getAll().subscribe(
+          (lst2)=>{
+            this.letunidades = lst2;
+            for(let x of this.lstUnidadesCurriculares){
+              if(x.id==id){
+                this.unidadX = x;
+              }
+            }
+            if(this.unidadX.previas.length>0){
+              for (let previa of this.unidadX.previas){
+                this.previaServ.delete(previa.previa.id).subscribe();
+              }
+            }
+            this.unidadService.delete(id).subscribe();
+            location.reload();
+          })
+        swal.fire(
+          'Eliminado!',
+          'La unidad curricular ha sido eliminada',
+          'success'
+        )
+        this.router.navigate(['/unidadCurricular'])
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swal.fire(
+          'Cancelado',
+          'Todo sigue como estaba!',
+          'error'
+        )
+      }
+    })
+
+
+
+
+
   }
 
   editar(id: number){

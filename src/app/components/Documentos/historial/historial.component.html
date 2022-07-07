@@ -12,9 +12,9 @@
      </p>
     </div>
     <div [style]="{'display': 'flex' ,'justify-content': 'center'}">
-      <button  pButton pRipple type="button" label="<<"  (click)="anterior()" class="p-button-raised p-button-text"></button>
+      <button  pButton pRipple type="button"   (click)="anterior()" class="p-button-raised p-button-text"><<</button>
       <label [style]="{'width': '20px' ,'display': 'flex' ,'justify-content': 'center'}">{{page}}</label>
-      <button pButton pRipple type="button" label=">>"  (click)="posterior()" class="p-button-raised p-button-text"></button>
+      <button pButton pRipple type="button"  (click)="posterior()" class="p-button-raised p-button-text">>></button>
     </div>
   </p-card>
   </div>

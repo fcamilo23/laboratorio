@@ -15,7 +15,7 @@ export class ModificarComponent implements OnInit {
   uploadedFiles: any[] = [];
   public modificarDocForm:FormGroup = new FormGroup({
     titulo: new FormControl(''),
-    tipo: new FormControl('')
+    tipo: new FormControl(''),
     });;
   messageService: any;
   constructor(protected docuserv:DocumentService) {
@@ -66,6 +66,26 @@ export class ModificarComponent implements OnInit {
   }
   cancelar(){
     window.location.href = ('/DocumentosActivos');
+  }
+  Alta(){
+    if(localStorage.getItem('logueado') == '1'){
+      let id= JSON.parse(localStorage.getItem("idDocuActual") || '{}');
+      let t:string="";
+      let tip:string="";
+      let doc:string="";
+      t=t+this.modificarDocForm.get('titulo')!.value;
+      tip=tip+this.modificarDocForm.get('tipo')!.value;
+      let d= new Documento(t,tip,doc);
+      d.id=id;
+      if (this.docuserv.Modificar(id,d).subscribe()){
+        alert('Se ha Modificado la noticia correctamente');
+        window.location.href = ('/DocumentosActivos');
+      }else{
+        alert('Ha ocurrido un error');
+      }
+      }else{
+        alert('Debe estar logueado para realizar esta accion');
+      }
   }
  }
 

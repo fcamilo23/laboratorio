@@ -1,0 +1,5 @@
+.responsive-tab-view .p-tabview-nav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+}

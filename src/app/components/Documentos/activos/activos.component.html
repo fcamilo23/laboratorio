@@ -1,37 +1,35 @@
-<div class="center" style="margin-top: 5%">
-<br/><br/>
-<button *ngIf='logueado' pButton pRipple label="AGREGAR DOCUMENTO" routerLink='/DocumentoNuevo'></button>
+<button *ngIf='logueado' pButton pRipple  routerLink='/DocumentoNuevo'>AGREGAR DOCUMENTO</button>
 &nbsp;&nbsp;&nbsp;
-<button *ngIf='logueado' pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
+<button *ngIf='logueado' pButton pRipple  routerLink='/DocumentoHistorial'>HISTORIAL</button>
 <br/><br/>
-<p-tabView>
-<p-tabPanel header="DATOS DE INTERES" [style]="{'width': '90%', 'margin-bottom': '2%','display': 'flex' ,'justify-content': 'center'}">
+<p-tabView class="responsive-tab-view">
+<p-tabPanel header="DATOS DE INTERES" class="p-tabview-nav">
 <div *ngFor="let di of datint">
  <h3 style="text-decoration:underline"> {{di.titulo}} </h3>
  <p>
- <button *ngIf='logueado' pButton pRipple type="button"  label="VER" (click)="showPdf(di)"></button>
+ <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(di)">VER</button>
  &nbsp;
- <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" (click)="Editar(di)"></button>
+ <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(di)">EDITAR</button>
 </p>
 </div>
 </p-tabPanel>
-<p-tabPanel header="INFORMACION CARRERA" [style]="{'width': '90%', 'margin-bottom': '2%','display': 'flex' ,'justify-content': 'center'}">
+<p-tabPanel header="INFORMACION CARRERA" class="p-tabview-nav">
 <div *ngFor="let ic of infocar">
  <h3 style="text-decoration:underline">  {{ic.titulo}}  </h3>
  <p>
-  <button *ngIf='logueado' pButton pRipple type="button" label="VER"  (click)="showPdf(ic)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(ic)">VER</button>
   &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ic)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(ic)">EDITAR</button>
  </p>
 </div>
 </p-tabPanel>
-<p-tabPanel header="OPURTUNIDAD LABORAL" [style]="{'width': '90%', 'margin-bottom': '2%','display': 'flex' ,'justify-content': 'center'}">
+<p-tabPanel header="OPURTUNIDAD LABORAL" class="p-tabview-nav">
 <div  *ngFor="let ol of oplab ">
   <h3 style="text-decoration:underline">{{ol.titulo}}</h3>
   <p>
-  <button *ngIf='logueado' pButton pRipple type="button" label="VER"  (click)="showPdf(ol)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="showPdf(ol)">VER</button>
   &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ol)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" (click)="Editar(ol)">EDITAR</button>
  </p>
 </div>
 </p-tabPanel>

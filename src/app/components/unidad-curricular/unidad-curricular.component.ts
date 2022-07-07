@@ -38,16 +38,25 @@ export class UnidadCurricularComponent implements OnInit {
     this.cargarLista();
   }
 
-  eliminar(index: number){
+  eliminar(id: number){
     if(confirm('Desea eliminar esta materia?')){
       this.unidadService.getAll().subscribe(
       (lst2)=>{
         this.letunidades = lst2;
-        this.unidadX = this.letunidades[index];
-        for (let previa of this.unidadX.previas){
-          this.previaServ.delete(previa.previa.id).subscribe();
+        for(let x of this.lstUnidadesCurriculares){
+          if(x.id==id){
+            this.unidadX = x;
+          }
         }
-        this.unidadService.delete(this.unidadX.id).subscribe();
+        if(this.unidadX.previas.length>0){
+          alert("entra");
+          for (let previa of this.unidadX.previas){
+            alert("entra2");
+            this.previaServ.delete(previa.previa.id).subscribe();
+          }
+          alert("sale");
+        }
+        this.unidadService.delete(id).subscribe();
         location.reload();
       })
     }    
@@ -91,14 +100,11 @@ export class UnidadCurricularComponent implements OnInit {
   }
 
   mandarID(index: number){
-    this.unidadcurricular = this.lstUnidadesCurriculares[index];
-    this.route.navigate(['/verPrevias', this.unidadcurricular.id]);
+    this.route.navigate(['/verPrevias', index]);
   }
 
   agregarPrevia(index: number){
-    alert(index);
-    this.unidadcurricular = this.lstUnidadesCurriculares[index];
-    this.route.navigate(['/agregarPrevias', this.unidadcurricular.id]);
+    this.route.navigate(['/agregarPrevias', index]);
   }
 
 }

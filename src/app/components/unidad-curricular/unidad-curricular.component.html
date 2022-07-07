@@ -35,12 +35,12 @@
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
                                <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
                                 </div><br><br><br>
                                 <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
                                 </div>
 
                                
@@ -60,7 +60,7 @@
                 <h3 *ngIf="semestre2.length > 0"></h3>      
                 <div class="" *ngIf="semestre2.length > 0">
                     <table class="table estiloTable">
-                        <thead > <h1  style="margin-left: 20%" > Semestre 2</h1>
+                        <thead> <h1  style="margin-left: 20%;" > Semestre 2</h1>
                             <tr>
                                 <th><p class="titulo">Id</p></th>
                                 <th><p class="titulo">Nombre</p></th>
@@ -87,13 +87,13 @@
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                               <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
                                 </div><br><br><br>
                                 <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
                                 </div>
 
                                
@@ -132,15 +132,14 @@
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                               <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
                                 </div><br><br><br>
                                 <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
                                 </div>
-
                                
                             </td>
                         </tbody>
@@ -177,13 +176,13 @@
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                               <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
                                 </div><br><br><br>
                                 <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
                                 </div>
 
                                
@@ -222,13 +221,13 @@
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                               <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
                                 </div><br><br><br>
                                 <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
                                 </div>
 
                                
@@ -267,13 +266,13 @@
                             <td style="width: 40px"><p class="texto">{{n.materia.nombre}}</p></td>
                             <td style="width: 40px"><p class="texto">{{n.previas.length}}</p></td>
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">
-                               <div >
-                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(i)">
+                                <div >
+                                    <input style="border-radius: 5px;" class="btnEliminar btnResp" type="submit" name="eliminar" value="Eliminar" (click)="eliminar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Listar Previas" (click)="mandarID(n.id)">
                                 </div><br><br><br>
                                 <div  >
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(i)">
-                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(i)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Editar" (click)="editar(n.id)">
+                                    <input style="border-radius: 5px" class="btnEditar btnResp" type="submit" id={{n.id}} name="editar" value="Agregar Previa" (click)="agregarPrevia(n.id)">
                                 </div>
 
                                
@@ -286,7 +285,3 @@
                     
                 </div>
 </div>
-
-<div style="margin-top: 250px;" *ngIf="loader">
-    <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
-  </div>

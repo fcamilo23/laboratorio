@@ -54,7 +54,11 @@ export class EditarUnidadComponent implements OnInit {
     this.uniServ.getAll().subscribe(
       (lst)=>{
         this.letUnidades = lst;
-        this.unidadX = this.letUnidades[this.letID];
+        for(let x of lst){
+          if(x.id==this.letID){
+            this.unidadX = x;
+          }
+        }
         this.materiaX = this.unidadX.materia;
         this.editUnidadForm.controls['nombre'].setValue(this.unidadX.nombre);
         this.editUnidadForm.controls['descripcion'].setValue(this.unidadX.descripcion);

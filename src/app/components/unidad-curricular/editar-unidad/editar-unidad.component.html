@@ -23,9 +23,13 @@
             <label for="float-input">Documento</label>
         </span>
         <br/><br/>
+        <label style="color:rgb(199, 199, 199)">Semestre</label>
+
         <span class="p-float-label inpresp1" >
+
             <div class="input-field col s12">
-                <select pInputText formControlName="semestre"  required>
+
+                <select pInputText formControlName="semestre" style="width: 30%" required>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -33,18 +37,18 @@
                   <option value="5">5</option>
                   <option value="6">6</option>
                 </select>
-                <label>Semestre</label>
             </div>
         </span>
         <br/><br/>
+        <label style="color:rgb(199, 199, 199)">Materia</label>
+
         <span class="p-float-label inpresp1" >
             <div class="input-field col s12">
-                <select pInputText formControlName="materia"  required>
+                <select pInputText formControlName="materia" style="width: 30%" required>
                   <option value={{dato.nombre}} *ngFor="let dato of letMaterias; let i = index">
                      {{dato.nombre}}
                  </option>
                 </select>
-                <label>Materia</label>
             </div>
         </span>
         <br/><br/>

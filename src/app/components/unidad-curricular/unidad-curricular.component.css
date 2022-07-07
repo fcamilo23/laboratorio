@@ -18,10 +18,15 @@
   }
 
   
+  .texto{
+    color: black;
+    font-size: 20px;
+ }
   
   td {
     border-top: 5px solid rgb(66, 105, 153);
     background: rgb(78, 129, 196);
+
     padding: 15px;
     
     
@@ -38,6 +43,8 @@
  }
  thead{
     background: rgb(78, 129, 196);
+    background: rgb(90, 131, 179);
+    
     border-bottom: 10px solid rgb(1, 25, 54);
 
 

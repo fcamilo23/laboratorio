@@ -8,6 +8,7 @@ import { UnidadCurricular } from 'src/app/clases/unidadCurricular';
 import { MateriaService } from 'src/app/service/materias.service';
 import { PreviaService } from 'src/app/service/previa.service';
 import { UnidadCurricularService } from 'src/app/service/unidad-curricular.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-unidad',
@@ -111,15 +112,61 @@ export class EditarUnidadComponent implements OnInit {
      
       let n = new UnidadCurricular(this.unidadX.id,nombre,descripcion,+creditos,this.strImg,+semestre,this.materiaX,this.unidadX.previas);
       
-      if(localStorage.getItem('logueado') == '1'){
-        if(confirm("Desea guardar los cambios realizados?")){
-          this.uniServ.edit(n).subscribe();
-          alert("Se han guardado los cambios exitosamnete!");
-          this.router.navigate(['/unidadCurricular']);
-      }
-      }else{
-        alert('Debe estar logueado para realizar esta accion');
-      }
+      const swalWithBootstrapButtons = swal.mixin({
+        customClass: {
+          confirmButton: 'btn1 btn-success',
+          cancelButton: 'btn1 btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Estás seguro?',
+        text: "No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, guardar cambios!',
+        cancelButtonText: 'No, cancelar!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if(localStorage.getItem('logueado') == '1'){
+            this.uniServ.edit(n).subscribe();
+            this.router.navigate(['/unidadCurricular']);
+            swalWithBootstrapButtons.fire(
+              'Perfecto!',
+              'Los cambios han sido guardados',
+              'success'
+            )
+            this.router.navigate(['/unidadCurricular']);
+        
+        }else{
+          swalWithBootstrapButtons.fire(
+            'Error!',
+            'Debe estar logueado para realizar esta accion',
+            'error'
+          );
+        }
+  
+         
+
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Todo sigue como estaba!',
+            'error'
+          )
+        }
+      })
+
+
+
+
+
+      
     }else{
       alert('No pueden quedar campos vacios');
     }

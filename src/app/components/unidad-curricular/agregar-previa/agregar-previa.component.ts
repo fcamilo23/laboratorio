@@ -6,6 +6,7 @@ import { PreviaSave } from 'src/app/clases/previaSave';
 import { UnidadCurricular } from 'src/app/clases/unidadCurricular';
 import { PreviaService } from 'src/app/service/previa.service';
 import { UnidadCurricularService } from 'src/app/service/unidad-curricular.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-previa',
@@ -90,7 +91,7 @@ export class AgregarPreviaComponent implements OnInit {
   }
 
   agregarPrevia(){
-    alert(1);
+    
     let unidadZ = this.previasForm.controls['unidad'].value;
     let tipoZ = this.previasForm.controls['tipo'].value;
 
@@ -102,7 +103,7 @@ export class AgregarPreviaComponent implements OnInit {
         }
       }
       let previa = new PreviaSave(this.letid,+unidadZ,tipoZ);
-      alert(JSON.stringify(previa));
       this.previasService.create(previa).subscribe();
+      swal.fire('Listo!','Se ha agregado la previa','success');
   }
 }

@@ -22,9 +22,7 @@
                             <td style="width: 20%; border-radius: 7px"><a href="verNoticia" (click)="abrirVer(i)"> <img src="{{n.imagen}}" alt=""> </a></td>
                             <td style="vertical-align:text-top;"> 
                                 <p style="margin-bottom: 2%" class="titulo">{{n.titulo}}</p>
-                                <p style="margin-top: 0px" class="texto">{{n.descripcion.substring(0,120)}}</p>
-                                <p style="margin-top: 0px" class="texto">{{n.descripcion.substring(121,241)}}</p>
-                                <p style="margin-top: 0px" class="texto">{{n.descripcion.substring(242,363)}}</p>
+                                <p style="margin-top: 0px" class="texto">{{n.descripcion.substring(0,100)}}...</p>
                             </td>
 
                             <td *ngIf="logueado=='1'" style="vertical-align:text-top; width: 20%;">

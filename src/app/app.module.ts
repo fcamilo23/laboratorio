@@ -29,7 +29,7 @@ import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/
 import { ActivosComponent } from './components/Documentos/activos/activos.component';
 import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
 import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
-import { HistorialComponent } from './components/Documentos/historial/historial.component';
+import { AgregarPreviaComponent } from './components/unidad-curricular/agregar-previa/agregar-previa.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { HistorialComponent } from './components/Documentos/historial/historial.
     ActivosComponent,
     NuevoComponent,
     ModificarComponent,
-    HistorialComponent
+    AgregarPreviaComponent,
   ],
   imports: [
     BrowserModule,

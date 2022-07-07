@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: " https://gr3-ria2022.test.softtero.com/api",
+  apiURL: "https://gr3-ria2022.test.softtero.com/api",
   estaLogueado: false
 };
 

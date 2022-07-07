@@ -1,13 +1,12 @@
+import { UnidadCurricularComponent } from "../components/unidad-curricular/unidad-curricular.component";
 import { UnidadCurricular } from "./unidadCurricular";
 
-export class Previa {
-    public id: number;
+export class PreviaUnidad {
     public unidadCurricular: UnidadCurricular;
     public previa: UnidadCurricular;
     public tipo: string;
    
-    constructor(id: number, unidadCurricular: UnidadCurricular, previa: UnidadCurricular, tipo: string) {
-        this.id = id;
+    constructor(unidadCurricular: UnidadCurricular, previa: UnidadCurricular, tipo: string) {
         this.unidadCurricular = unidadCurricular;
         this.previa = previa;
         this.tipo = tipo;

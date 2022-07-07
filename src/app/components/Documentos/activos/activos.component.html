@@ -1,16 +1,13 @@
 <br/><br/>
-<button *ngIf='logueado' pButton pRipple label="AGREGAR DOCUMENTO" routerLink='/DocumentoNuevo'></button>
-&nbsp;&nbsp;&nbsp;
-<button *ngIf='logueado' pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
+<button *ngIf='logueado' pButton pRipple type="button" label="Agregar Documento" class="p-button-outlined p-button-rounded" routerLink='/DocumentoNuevo'></button>
 <br/><br/>
 <div style="display: 'flex' ; justify-content: 'center';">
 <p-card header="DATOS DE INTERES" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
 <div *ngFor="let di of datint">
  <h3 style="text-decoration:underline"> {{di.titulo}} </h3>
  <p>
- <button *ngIf='logueado' pButton pRipple type="button"  label="VER" (click)="showPdf(di)"></button>
- &nbsp;
- <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" (click)="Editar(di)"></button>
+ <button *ngIf='logueado' pButton pRipple type="button" label="VER" class="p-button-outlined p-button-rounded" (click)="showPdf(di)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" class="p-button-outlined p-button-rounded" (click)="Editar(di)"></button>
 </p>
 </div>
 </p-card>
@@ -21,9 +18,8 @@
 <div *ngFor="let ic of infocar">
  <h3 style="text-decoration:underline">  {{ic.titulo}}  </h3>
  <p>
-  <button *ngIf='logueado' pButton pRipple type="button" label="VER"  (click)="showPdf(ic)"></button>
-  &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ic)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" label="VER" class="p-button-outlined p-button-rounded" (click)="showPdf(ic)"></button>
+   <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" class="p-button-outlined p-button-rounded" (click)="Editar(ic)"></button>
  </p>
 </div>
 </p-card>
@@ -34,10 +30,10 @@
 <div  *ngFor="let ol of oplab ">
   <h3 style="text-decoration:underline">{{ol.titulo}}</h3>
   <p>
-  <button *ngIf='logueado' pButton pRipple type="button" label="VER"  (click)="showPdf(ol)"></button>
-  &nbsp;
-  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ol)"></button>
+  <button *ngIf='logueado' pButton pRipple type="button" label="VER" class="p-button-outlined p-button-rounded" (click)="showPdf(ol)"></button>
+   <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" class="p-button-outlined p-button-rounded" (click)="Editar(ol)"></button>
  </p>
+ <br/>
 </div>
 </p-card>
 </div>

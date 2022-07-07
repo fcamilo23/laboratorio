@@ -43,7 +43,7 @@ export class MateriasComponent implements OnInit {
             if(unidad.materia.id==this.materia.id){
                if(unidad.previas.length>0){
                 for (let previa of unidad.previas){
-                  this.previaService. delete(previa.previa).subscribe();
+                  this.previaService. delete(previa.previa.id).subscribe();
                 }
               }
               this.unidadService.delete(unidad.id).subscribe();

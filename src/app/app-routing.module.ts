@@ -18,7 +18,7 @@ import { VerPreviasComponent } from './components/unidad-curricular/ver-previas/
 import { ActivosComponent } from './components/Documentos/activos/activos.component';
 import { ModificarComponent } from './components/Documentos/modificar/modificar.component';
 import { NuevoComponent } from './components/Documentos/nuevo/nuevo.component';
-import { HistorialComponent } from './components/Documentos/historial/historial.component';
+import { AgregarPreviaComponent } from './components/unidad-curricular/agregar-previa/agregar-previa.component';
 
 const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'login', component:LoginComponent},
@@ -31,13 +31,13 @@ const routes: Routes = [{path:'NavBar', component:NavbarComponent },
                         {path:'altaMateria', component:AltaMateriaComponent},
                         {path:'editarMateria', component:EditarMateriaComponent},
                         {path:'unidadCurricular', component:UnidadCurricularComponent},
-                        {path:'editarUnidad', component:EditarUnidadComponent},
+                        {path:'editarUnidad/:id', component:EditarUnidadComponent},
                         {path:'altaUnidad', component:AltaUnidadComponent},
-                        {path:'verPrevias', component:VerPreviasComponent},
+                        {path:'verPrevias/:id', component:VerPreviasComponent},
                         {path:'DocumentosActivos', component:ActivosComponent},
                         {path:'DocumentoModificar', component:ModificarComponent},
                         {path:'DocumentoNuevo', component:NuevoComponent},
-                        {path:'DocumentoHistorial', component:HistorialComponent}
+                        {path:'agregarPrevias/:id', component:AgregarPreviaComponent}
                       ];
 
 @NgModule({

@@ -12,7 +12,7 @@ export class HistorialComponent implements OnInit {
   historia: Documento[]=[];
   page=1;
   largo!:number;
-  logueado=false;
+  logueado!:string;
   loader!: boolean;
 
 
@@ -20,8 +20,8 @@ export class HistorialComponent implements OnInit {
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
-    if((x!=null)||(x==false)){
-      this.logueado = true;
+    if((x!=null)){
+      this.logueado = x;
     }
     this.cargarLista();
   }

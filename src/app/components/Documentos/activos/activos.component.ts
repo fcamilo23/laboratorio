@@ -11,7 +11,7 @@ import { Routes } from '@angular/router';
   styleUrls: ['./activos.component.css']
 })
 export class ActivosComponent implements OnInit {
-  logueado: boolean=false;
+  logueado!: string;
   datint!:Documento[];
   infocar!:Documento[];
   oplab!:Documento[];
@@ -26,8 +26,8 @@ export class ActivosComponent implements OnInit {
 
   ngOnInit(): void {
     let x = localStorage.getItem('logueado');
-    if((x!=null)||(x==false)){
-      this.logueado = true;
+    if((x!=null)){
+      this.logueado = x;
     }
     this.cargarLista();
   }

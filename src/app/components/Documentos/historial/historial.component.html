@@ -6,9 +6,9 @@
      <p *ngIf='d.activo'>ESTADO: Activo</p>
      <p *ngIf!='!d.activo'>ESTADO: Bloquedao</p>
      <p>
-      <button *ngIf='logueado' pButton pRipple type="button"  label="VER" (click)="showPdf(d)"></button>
+      <button pButton pRipple type="button"  label="VER" (click)="showPdf(d)"></button>
       &nbsp;
-      <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" (click)="Editar(d)"></button>
+      <button *ngIf="logueado=='1'" pButton pRipple type="button" label="EDITAR" (click)="Editar(d)"></button>
      </p>
     </div>
     <div [style]="{'display': 'flex' ,'justify-content': 'center'}">

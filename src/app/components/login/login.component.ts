@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
         },
         (error)=>{
-          alert('Datos incorrectos');
+          Swal.fire('Error!', 'No se pudo iniciar la sesión. Verifique sus datos', 'error');
           //datos incorrectos
         }
    

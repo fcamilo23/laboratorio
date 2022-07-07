@@ -1,13 +1,11 @@
+<div class="center" style="margin-top: 5%">
 <br/><br/>
 <button *ngIf='logueado' pButton pRipple label="AGREGAR DOCUMENTO" routerLink='/DocumentoNuevo'></button>
 &nbsp;&nbsp;&nbsp;
 <button *ngIf='logueado' pButton pRipple label="HISTORIAL" routerLink='/DocumentoHistorial'></button>
 <br/><br/>
-
-
-
-<div style="display: 'flex' ; justify-content: 'center';">
-<p-card header="DATOS DE INTERES" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
+<p-tabView>
+<p-tabPanel header="DATOS DE INTERES" [style]="{'width': '90%', 'margin-bottom': '2%','display': 'flex' ,'justify-content': 'center'}">
 <div *ngFor="let di of datint">
  <h3 style="text-decoration:underline"> {{di.titulo}} </h3>
  <p>
@@ -16,12 +14,8 @@
  <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR" (click)="Editar(di)"></button>
 </p>
 </div>
-</p-card>
-
-<br/><br/>
-
-
-<p-card header="INFORMACION CARRERA" [style]="{'width': '25rem', 'margin-bottom': '2em','display': 'flex' ,'justify-content': 'center'}">
+</p-tabPanel>
+<p-tabPanel header="INFORMACION CARRERA" [style]="{'width': '90%', 'margin-bottom': '2%','display': 'flex' ,'justify-content': 'center'}">
 <div *ngFor="let ic of infocar">
  <h3 style="text-decoration:underline">  {{ic.titulo}}  </h3>
  <p>
@@ -30,11 +24,8 @@
   <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ic)"></button>
  </p>
 </div>
-</p-card>
-
-<br/><br/>
-
-<p-card header="OPURTUNIDAD LABORAL" [style]="{'width': '25rem', 'margin-bottom': '4em','display': 'flex' ,'justify-content': 'center'}">
+</p-tabPanel>
+<p-tabPanel header="OPURTUNIDAD LABORAL" [style]="{'width': '90%', 'margin-bottom': '2%','display': 'flex' ,'justify-content': 'center'}">
 <div  *ngFor="let ol of oplab ">
   <h3 style="text-decoration:underline">{{ol.titulo}}</h3>
   <p>
@@ -43,9 +34,9 @@
   <button *ngIf='logueado' pButton pRipple type="button" label="EDITAR"  (click)="Editar(ol)"></button>
  </p>
 </div>
-</p-card>
-</div>
-
+</p-tabPanel>
+</p-tabView>
 <div style="margin-top: 250px;" *ngIf="loader">
   <img src="../../../assets/imagen/ff.gif" class="loading center1" alt="">
 </div>
+

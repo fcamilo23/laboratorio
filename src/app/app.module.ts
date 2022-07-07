@@ -32,7 +32,7 @@ import { ModificarComponent } from './components/Documentos/modificar/modificar.
 import { HistorialComponent } from './components/Documentos/historial/historial.component';
 import { HistorialNoticiasComponent } from './components/noticias/historial-noticias/historial-noticias.component';
 import { VerNoticiaComponent } from './components/noticias/ver-noticia/ver-noticia.component';
-
+import { TabViewModule } from "primeng/tabview";
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +68,8 @@ import { VerNoticiaComponent } from './components/noticias/ver-noticia/ver-notic
     PasswordModule,
     InputTextModule,
     ButtonModule,
-    CarouselModule
+    CarouselModule,
+    TabViewModule
   ],
   providers: [CarouselService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],

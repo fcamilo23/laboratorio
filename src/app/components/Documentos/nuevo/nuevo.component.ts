@@ -40,7 +40,7 @@ export class NuevoComponent implements OnInit {
     Swal.fire('Listo!', 'Se ha agregado el documento correctamente', 'success');
     this.router.navigate(['/DocumentosActivos']);
   }else{
-    alert('Ha ocurrido un error');
+    Swal.fire('Error!', 'Ha ocurrido un error', 'error');
   }
   }else{
     Swal.fire('Error!', 'Debe estar logueado para realizar esta accion', 'error');

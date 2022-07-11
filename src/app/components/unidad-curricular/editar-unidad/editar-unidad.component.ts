@@ -168,7 +168,7 @@ export class EditarUnidadComponent implements OnInit {
 
       
     }else{
-      alert('No pueden quedar campos vacios');
+      swal.fire('Error!','No pueden quedar campos vacios','error');
     }
   }
 

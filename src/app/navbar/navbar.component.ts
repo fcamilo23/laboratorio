@@ -71,7 +71,7 @@ export class NavbarComponent implements OnInit {
           {label: 'Documentos', icon: 'pi pi-fw pi-file', routerLink:'/DocumentosActivos'},
           {label: 'Materias', icon: 'pi pi-fw pi-file',routerLink: '/materias'},
           {label: 'U. Curriculares', icon: 'pi pi-fw pi-file',routerLink: '/unidadCurricular'},
-          {label: 'Contacto', icon: 'pi pi-fw pi-file',routerLink: '/contacto'}
+          {label: 'Contacto', icon: 'pi pi-user',routerLink: '/contacto'}
 
 
       ]

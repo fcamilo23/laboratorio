@@ -175,7 +175,7 @@ export class ModificarComponent implements OnInit {
         alert('Ha ocurrido un error');
       }
       }else{
-        alert('Debe estar logueado para realizar esta accion');
+        swal.fire('Error!','Debe estar logueado para realizar esta accion', 'error');
       }
   }
  }
